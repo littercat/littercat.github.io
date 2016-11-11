@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/angular.min.js" ></script>
+    
+</head>
+
+<body>
+	
+	<!--
+		
+	-->
+	<fieldset ng-init="cost=10;num=1">
+		<legend>价格计算器：</legend>
+		<div>
+			单价：<input type="number" ng-model="cost"/>
+		</div>
+		<div>
+			数量：<input type="number" ng-model="num"/>
+		</div>
+		<div>
+			总价：{{cost * num}}
+		</div>
+			
+	</fieldset>
+    
+</body>
+
+</html>

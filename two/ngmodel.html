@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/angular.min.js" ></script>
+    
+</head>
+
+<body>
+    <div ng-init="count=2;name='KJIN'">
+    	<!--
+    		ng-model：如果我们已经定义了数据模型，那么我们绑定了当前的数据模型
+    			如果我们没有定义这个数据模型，那么就相当于，自己又重新声明了一个数据模型为定义名字的模型对象
+    	-->
+    	<input type="text" ng-model="name" />
+    	<hr />
+    	世界你好！Hello {{name +'******1609***' + count}}
+    	<div ng-bind="name"></div>
+    </div>
+    
+
+    <script src="" type="text/javascript"></script>
+</body>
+
+</html>

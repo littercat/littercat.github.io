@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/angular.min.js" ></script>
+    
+</head>
+
+<body>
+    <!--
+    	ng-repeat：
+    -->
+    <ul ng-controller="myCtrl">
+    	<li ng-repeat = "x in names">{{x.name + '/' + x.country}}</li>
+    </ul>
+
+    <script type="text/javascript">
+    	//angular.module就是定义一个模块，定义绑定到我们的ng-app，相当于我们程序入口绑定一个功能函数
+    	//第一个参数主要起一个名字，便于我们绑定
+    	//第二个参数为我们依赖注入模块，加载配置
+    	var myApp = angular.module('myApp',[]);
+    	//定义一个控制器，同时控制器里面会声明一个局部的全局作用域$scope
+    	//第一个参数为控制器的名字，第二个参数为回调功能函数
+    	//便于我们使用前端自动工具gulp进行压缩处理等等。。。
+    	myApp.controller('myCtrl',['$scope',function($scope){
+    		$scope.names = [
+    			{name:'Jani',country:'Norway'},
+				{name:'Hege',country:'Sweden'},
+				{name:'Kai',country:'Denmark'}
+    		];
+    	}])
+    	
+    </script>
+</body>
+
+</html>

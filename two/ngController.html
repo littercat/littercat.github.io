@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/angular.min.js" ></script>
+    
+</head>
+
+<body>
+	
+	<!--
+		一般来说我们通过指令ng-app，一个页面只能出现一次，如果出现多次只显示第一个
+		一般来说我们的页面中可以有多个控制器，一个module【模块】可以绑定很多的控制器，
+		我们的控制器，是逻辑代码的，或者写数据模型，定义一些变量，如果有数据的话就是一个数据的model
+		我们还需要一个知识点就是，我们每一次声明一个模块module，它对应的作用域为$scope,它呢就像是一个
+		基于我们当前的控制器的全局变量
+		
+	-->
+    <div ng-app="myApp" ng-controller="myCtrl">
+    	<input type="text"  ng-model="name"/>
+    	<hr />
+    	Hello!my name is : {{ name  + age}}
+    </div>
+    <div ng-app="myApp1" ng-controller="myCtrl1">
+    	这是第二个controller
+    	{{name + age}}
+    </div>
+    
+    <script type="text/javascript">
+    	var myApp = angular.module('myApp',[]);
+    	myApp.controller('myCtrl',['$scope',function($scope){
+    		$scope.name = "KJIN";
+    		$scope.age=18;
+    	}])
+    	
+    	var myApp1 = angular.module('myApp1',[]);
+    	myApp1.controller('myCtrl1',['$scope',function($scope){
+    		$scope.name = "KJIN2";
+    		$scope.age=19;
+    	}])
+    </script>
+</body>
+
+</html>

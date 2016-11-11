@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/angular.min.js" ></script>
+    
+</head>
+
+<body>
+    <div ng-app>
+    	<!--
+    		ng-app：程序的入口，如果C语言每个程序，先开始的时候 main
+    		第二点需要注意的地方，就是我们ng-app的位置与我们程序执行有一定的关系
+    		因为：ng-app在定义的时候，同时也定义了一个作用域，就像我们程序的局部作用域一样，
+    		一般来说我们定义的ng-app都放在我们HTml标签，这样就相当于声明全页面有效果
+    		只要是angularJS里面就一定含有ng-app程序入口
+    	-->
+    	<input type="text" />
+    	<hr />	
+    	<!--
+    		表达式：在我们的angular里面采用双括号的形式
+    		可以做一些运算
+    	-->
+    	{{6+6}}
+    </div>
+    <div>
+    	{{8+8}}
+    </div>
+
+    <script src="" type="text/javascript"></script>
+</body>
+
+</html>
