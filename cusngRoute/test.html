@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <script type="text/javascript" src="js/angular.min.js" ></script>
+    <script type="text/javascript" src="js/angular-route.min.js" ></script>
+    <style>
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	footer{
+    		position: fixed;
+    		bottom: 0;
+    		height: 50px;
+    		border-top: 1px solid #999;
+    		width: 100%;
+    		left: 0;
+    		display: flex;
+    		align-items: center;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		background-color: #eaeaea;
+    		box-sizing: border-box;
+    	}
+    	footer a{
+    		display: inline-flex;
+    		width: 20%;
+    		height: 100%;
+    		align-self: center;
+    		justify-content: center;
+    		align-items: center;
+    	}
+    </style>
+    
+    
+</head>
+
+<body ng-controller="mainCtrl as main">
+	{{name}}
+	<header>
+		<h1>这是头部标题{{htmlText}}</h1>
+	</header>
+	
+	<div ng-view></div>
+	 {{name}}
+    <footer>
+		<a href="#/">首页</a>
+		<a href="#/tmp/listPage">分类</a>
+		<a href="#/tmp/shopCartPage">购物车</a>
+		<a href="#/tmp/myShowPage">我的秀</a>
+		<a href="#/tmp/morePage">更多...</a>
+    </footer>
+
+    <script type="text/javascript">
+    	var myApp = angular.module('myApp',['ngRoute']);
+    	
+    	myApp.controller('main',['$location',"$window",'$timeout',function($location,$window,$timeout){
+    		this.name ="1609";
+    	}])
+    	
+    	
+    </script>
+</body>
+
+</html>
