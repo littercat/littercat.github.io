@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/angular.min.js'></script>
+</head>
+<body>
+	<div ng-controller='myCtrl'>
+		<div ng-click='cusToggle()'>开关</div>
+		<div ng-hide='tagBtn'>
+			<h1>你好!maomao.....</h1>
+		</div>
+	</div>
+	
+	<script>
+
+		var myApp = angular.module('myApp',[]);
+		myApp.controller('myCtrl',['$scope',function($scope){
+			$scope.tagBtn = false;
+			$scope.cusToggle = function(){
+				$scope.tagBtn = !$scope.tagBtn;
+			}
+		}])
+		
+	</script>
+</body>
+</html>

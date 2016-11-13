@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-include</title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body>
+		<input type="text" ng-blur='count=count+1' onblur='cusBlur()' ng-init='count=0' name="" id="" value="" />
+		<hr />
+		当前失去焦点的次数为：{{count}}
+		<script>
+			function cusBlur(){
+				console.log('该下课啦');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-include</title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body>
+		<!--
+			<div ng-include='tmp/heder.html'></div>
+		没有任何报错信息 也没有显示 这种原因是加入一个单引号-->
+		<div ng-include="'tmp/heder.html'"></div>
+	</body>
+</html>

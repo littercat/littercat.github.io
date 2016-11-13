@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>ng-model</title>
+	<script type="text/javascript" src='js/angular.min.js'></script>
+</head>
+<body>
+	<!-- ng-model 如果我们已经定义了数据模型，那么我们绑定啦当前的数据模型 如果我们没有定义这个数据模型，那么就相当于自己又重新声明了一个数据模型为定义名字的模型对象 -->
+	<!-- ng-bind  绑定 HTML元素到应用程序数据 使用给定 的变量或表达式的值来替换html元素的内容  也可以后的html中的值-->
+
+	<div ng-init="name='maomao';age=18">
+		<input type="text" ng-model='name'>
+		<hr>
+		你好！我是{{name}},今年{{age}}
+		<div ng-bind='age=20'></div>
+	</div>
+</body>
+</html>

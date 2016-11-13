@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		 <meta charset="utf-8">
+	    <!-- SEO  -->
+	    <meta name="keywords" content="" />
+	    <meta name="description" content="" />
+	    <meta name="author" content="" />
+	    <!-- 苹果专用 -->
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 简单移动端适配 -->
+	   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 图标 -->
+		<link rel="shortcut icon" href="">
+	    
+	    <title>继承</title>
+	    <script src='../js/angular.min.js'></script>
+	    <link rel="stylesheet" href="">
+	</head>
+	<body>
+		
+		<script>
+			var a = {
+				name:'maomao',
+				age:'18',
+				work:'程序员',
+				cusAcction:function(){
+					console.log('我是猫猫');
+				}
+			}
+			var b = {
+				sex:'man',
+				age:'20',
+				address:'平顶山',
+				cusAcction1:function(){
+					console.log('我是丫丫');
+				}
+			};
+			/*var c = angular.extend(b,a);
+			 * //a把b有相同的属性覆盖继承a的属性 没有的话直接继承
+			console.log(a);
+			console.log(b);
+			console.log(c);*/
+			
+			//angular.extend({},a,b)
+			//保留b对象添加a对象中b没有的属性
+			angular.extend({},a,b)
+			var d = angular.extend({},a,b);
+			console.log(d);
+		</script>
+	</body>
+</html>

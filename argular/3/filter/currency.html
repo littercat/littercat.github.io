@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<fieldset id="">
+				<legend>数字格式</legend>
+				<!--number:2 这个数字是保留几位小数 最终结果四舍五入-->
+				数字的基本操作：<span>{{amount | number:0}}</span>
+				<hr />
+				数字的基本操作：<span>{{amount | number:2}}</span>
+				<hr />
+				<!--给amount加个负号相当于数字为负数-->
+				数字的基本操作：<span>{{-amount | number:2}}</span>
+				<hr />
+			</fieldset>
+			
+		</div>
+		
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.amount = 1234.567;
+				
+			}])
+		</script>
+	</body>
+</html>

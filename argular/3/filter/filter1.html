@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../js/angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<!--转成大写-->
+			{{name |uppercase}}
+			<hr />
+			<!--转成小写-->
+			{{name1 | lowercase}}
+			<hr />
+			{{(name1+name) | uppercase}}
+			<hr />
+			{{(name1+name) | lowercase}}
+			<hr />
+			<ul>
+				<!--orderBy是排序根据年龄大小的顺序名字排列-->
+				<li ng-repeat="x in data | orderBy : 'age'">{{x.name}}</li>
+			</ul>
+		</div>
+		
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.name='maomao';
+				$scope.name1='MAOMAO';
+				$scope.data = [
+					{name:'张三',age:30},
+					{name:'李四',age:22},
+					{name:'王五',age:56},
+					{name:'毛毛',age:88},
+					{name:'大飞',age:35},
+					{name:'小凯',age:30},
+				]
+			}])
+		</script>
+	</body>
+</html>

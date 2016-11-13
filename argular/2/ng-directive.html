@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body>
+		<fieldset id="">
+			<legend>自定义指令</legend>
+			<!--<easydirective></easydirective>-->
+			<easy-directive></easy-directive>
+		</fieldset>
+		<!--
+			1.什么是自定义
+			angular.module().directive()声明一个自定义的指令
+			注意
+			      第一点：.directive()的第一个参数 一般的写法采用驼峰命令法 
+			      第二点：声明以后的使用myCustomer =》》my-customer
+			      指令命名规范
+			指令扩展啦我们html的标签
+			2.自定义指令包含什么
+				html网页中
+				<div> 元素
+				<div customer> 属性
+				<div class='cusClassName'> 类名-->
+				<!--注释-->
+					
+				
+		
+		<script>
+			var myApp = angular.module('myApp',[]);
+			myApp.directive('easyDirective',function(){
+				return {
+					//通过添加restrict属性 限制指令 必须通过特定的方式来调用
+/*					E 作为元素名使用     element
+					A 作为属性使用   attribute
+					C 作为类名使用   className
+					M 作为注释使用   comment
+					默认为EA 可以通过元素名和属性名来调用指令
+					* */
+
+					restrict:'E',
+					template:'<h1>自定义指令！</h1>'
+				}
+			})
+		</script>
+	</body>
+</html>

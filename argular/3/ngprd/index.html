@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='js/angular.min.js'></script>
+		<script src='js/angular-sanitize.min.js'></script>
+		<script src='js/angular-animate.min.js'></script>
+		<style>
+		*{
+    		
+    		margin: 0;
+    		padding:0;
+    		
+    	}
+    	header{
+    		height: 45px;
+    		width: 100%;
+    		background-color: pink;
+    		font-size: 21px;
+    		line-height: 45px;
+    		font-weight: 600;
+    		display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		align-items: center;
+    		text-align: center;
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    	}
+    	header div{
+    		height: 100%;
+    		line-height: 100%;
+    		display: inline-flex;
+    		align-self: center;
+    		justify-content: center;
+    	}
+    	.hlDiv, .hrDiv{
+    		width: 20%;
+    	}
+    	.hCDiv{
+    		width: 60%;
+    	}
+    	footer{
+    		position: fixed;
+    		bottom: 0;
+    		left: 0;
+    		display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		align-items: center;
+    		text-align: center;
+    		width: 100%;
+			height: 50px;    		
+    	}
+    	.fNav{
+    		width: 20%;
+    		height: 100%;
+    		display: inline-flex;
+    		align-self: center;
+    		align-items: center;
+    		justify-content: center;
+    		background-color: #999;
+    	}
+    	section{
+    		position: absolute;
+    		top:45px;
+    		bottom:50px;
+    		width:100%;
+    	}
+		.pgChange.ng-enter{
+			transition: all 1s linear;
+			opacity: 0;
+		}
+		.pgChange.ng-enter.ng-enter-active{
+			background: lightcoral;
+			opacity: 1;
+		}
+		.pgChange.ng-leave{
+			transition: all 1s linear;
+			background: lightsalmon;
+			opacity: 1;
+		}
+		.pgChange.ng-leave.ng-leave-active{
+			background: lightpink;
+			opacity: 0;
+		}
+		</style>
+	</head>
+	<body ng-controller = 'myCtrl'>
+		<section>
+			<header>
+				<div class='hlDiv'>
+					<button ng-hide='hlBtn'>这是左边按钮</button>
+				</div>
+				<div class='hCDiv'>
+					{{hTitle}}
+				</div>
+				<div class='hrTag'>
+					<button ng-hide='hrBtn'>这是右边按钮</button>
+				</div>
+			</header>
+			<section ng-include="'tmp/'+ pageTag + '.html'" class='pgChange'>
+				
+			</section>
+			<footer>
+				<div class='fNav' ng-click='changePage("homePage")'>
+					<span></span>
+					<div>首页</div>
+				</div>
+				<div class='fNav' ng-click='changePage("listPage")'>
+					<span></span>
+					<div>分类</div>
+				</div>
+				<div class='fNav' ng-click='changePage("shopCartPage")'>
+					<span></span>
+					<div>购物车</div>
+				</div>
+				<div class='fNav' ng-click='changePage("myShowPage")'>
+					<span></span>
+					<div>我的秀</div>
+				</div>
+				<div class='fNav' ng-click='changePage("morePage")'>
+					<span></span>
+					<div>更多</div>
+				</div>
+			</footer>
+		</section>
+		<script>
+			var myApp = angular.module('myApp',['ngSanitize','ngAnimate']);
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.pageInfo = {
+			        "homePage": {
+			            "hlBtn": true,
+			            "hTitle": "走秀网",
+			            "hrBtn": true
+			        },
+			        "listPage": {
+			            "hlBtn": false,
+			            "hTitle": "分类",
+			            "hrBtn": true
+			        },
+			        "shopCartPage": {
+			            "hlBtn": false,
+			            "hTitle": "购物车",
+			            "hrBtn": false
+			        },
+			        "myShowPage": {
+			            "hlBtn": false,
+			            "hTitle": "我的秀",
+			            "hrBtn": true
+			        },
+			        "morePage": {
+			            "hlBtn": false,
+			            "hTitle": "更多",
+			            "hrBtn": true
+			        }
+			    }
+			$scope.hTitle = $scope.pageInfo.homePage.hTitle;
+			$scope.hlBtn = true;
+			$scope.hrBtn = true;
+			$scope.pageTag = 'homePage'
+			$scope.changePage = function(a){
+				console.log(a);
+				$scope.hTitle = $scope.pageInfo[a].hTitle;
+				$scope.hlBtn = $scope.pageInfo[a].hlBtn;
+				$scope.hrBtn = $scope.pageInfo[a].hrBtn;
+				$scope.pageTag = a;
+			}
+			}])
+			myApp.controller('hpCtrl',['$scope',function($scope){
+				$scope.address="这是我们的首页";
+				$scope.alertFuc =function(){
+					alert("成功了！");
+				}
+			}])
+		</script>
+	</body>
+</html>

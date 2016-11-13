@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='js/angular.min.js'></script>
+		<script src='js/angular-sanitize.min.js'></script>
+	</head>
+	<body ng-controller = 'myCtrl'>
+		<section>
+			<header ng-include = "'./tmp/header.html'"></header>
+			<footer ng-include = "'./tmp/footer.html'"></footer>
+		</section>
+		<script>
+			var myApp = angular.module('myApp',['ngSanitize']);
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.pageObjArray = [
+					{hTitle:'zxiu 走秀网',hlTag:true,hrTag:true},
+				]
+				$scope.hTitle = $scope.pageObjArray[0].hTitle;
+			}])
+		</script>
+	</body>
+</html>

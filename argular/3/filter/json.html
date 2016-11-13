@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<fieldset id="">
+				<legend>数字格式</legend>
+				<!--得到一个json串 关键字大小写 json必须小写
+					其次数据格式必须是json格式的才可使用
+				-->
+					json的基本操作：<span>{{data | json}}</span>
+					<hr />
+					<!--json的基本操作1：<span>{{data | JSON}}</span>-->
+					<!--<hr />-->
+					json的基本操作2：<span>{{data | json:3}}</span>
+					<hr />
+					<!--想要json格式的效果必须把数据放到pre中-->
+					<pre>{{([{name:'张三',age:18},{name:'李四',age:25}])| json:2}}</pre>
+					<pre>{{([{name:'张三',age:18},{name:'李四',age:25}])| json:6}}</pre>
+	
+			</fieldset>
+			
+		</div>
+		
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.data = [
+					{name:'张三',age:18},
+					{name:'李四',age:25},
+					{name:'王五',age:16},
+					{name:'赵六',age:88},
+				];
+				console.log(typeof $scope.data)
+				console.log($scope.data);
+				$scope.data = JSON.stringify($scope.data);
+				console.log($scope.data);
+				console.log(typeof $scope.data);
+			}])
+		</script>
+	</body>
+</html>

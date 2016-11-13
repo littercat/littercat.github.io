@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <script src='js/angular.min.js'></script>
+    <script src='js/angular-route.min.js'></script>
+    <link rel="stylesheet" href="">
+</head>
+<style>	
+	html,body{
+		padding:0;
+		margin: 0;
+	}
+	footer{
+		display: flex;
+		display: -webkit-flex;
+		box-sizing: border-box;
+		justify-content: space-around;
+		height:40px;
+		background: #eee;
+		border-top:1px solid #666;
+		line-height: 40px;
+		position: fixed;
+		bottom:0;
+		left:0;
+		width:100%;
+	}
+</style>
+<body ng-controller='mainCtrl'>
+	<header>这是首页</header>
+	<div ng-view></div>
+    <footer >
+    	<a href="#/">首页</a>
+    	<a href="#/tmp/listPage">分类</a>
+    	<a href="#/tmp/myShowPage">我的秀</a>
+    	<a href="#/tmp/shopCarPage">购物车</a>
+    	<a href="#/tmp/morePage">更多</a>
+    </footer>
+
+    <script type="text/javascript">
+    //第一步：先载入angular-route.min.js
+    //第二步：包含ngRoute模块作为主应用模块的依赖模块
+    //第三部：使用ngView指令
+    //第四步：配置 $routeProvider，AngularJS $routeProvider 用来定义路由规则。
+    //config函数用于配置路由的规则，通过使用configAPI  我们请求把$routeProvider注入到我们的配置函数并且使用$routeProvider.whenAPI来定义我们的路由规则
+    //$routeProvider 为我们提供了 when(path,object) & otherwise(object) 函数按顺序定义所有路由，函数包含两个参数:
+    //  第一个参数是url或者url正则规则
+   //第二个参数是路由配置对象
+    	var myApp = angular.module('myApp',['ngRoute']);
+    	myApp.config(['$routeProvider',function($routeProvider){
+    		$routeProvider
+    		.when('/tmp/listPage',{
+    			//template 如果我们只需要在ng-view中插入的html内容使用
+    			//templateUrl 插入html模板文件
+    			//controller function string或数组类型 在当前模板上执行controller函数 生成新的scope
+    			templateUrl:'tmp/listPage.html',
+    			controller:'listCtrl',
+    		})
+    		.when('/tmp/shopCarPage',{
+    			templateUrl:'tmp/shopCarPage.html',
+    			controller:'shopCarCtrl'
+    		})
+    		.when('/tmp/myShowPage',{
+    			templateUrl:'tmp/myShowPage.html',
+    			controller:'myShowCtrl'
+    		})
+    		.when('/tmp/morePage',{
+    			templateUrl:'tmp/morePage.html',
+    			controller:'moreCtrl'
+    		})
+    		.otherwise({
+    			//redirecTo重定向的地址
+    			redirecTo:'/'
+    		})
+    		
+    	}])
+    	myApp.run(['$rootScope','$location',function($rootScope,$location){
+    		$rootScope.$on('$routeChangeStart',function(evt,next,current){
+    			console.log("路由开始变化");
+    		});
+    		$rootScope.$on('$routeChangeSuccess',function(evt,next,current){
+    			console.log("路由变化成功了");
+    		});
+    		$rootScope.$on('$routeChangeError',function(current,previous,rejection){
+    			console.log("路由变化失败了");
+    		});
+    	}])
+    	myApp.controller('mainCtrl',function($scope){
+    		console.log('mainCtrl');
+    	})
+    	myApp.controller('listCtrl',['$scope',function($scope){
+    		console.log('listCtrl');
+    	}])
+    	myApp.controller('moreCtrl',['$scope',function($scope){
+    		console.log('moreCtrl');
+    	}])
+    	myApp.controller('myShowCtrl',['$scope',function($scope){
+    		console.log('myShowCtrl');
+    	}])
+    	myApp.controller('shopCarCtrl',['$scope',function($scope){
+    		console.log('shopCarCtrl');
+    	}])
+    	</script>
+</body>
+
+</html>

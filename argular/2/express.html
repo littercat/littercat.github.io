@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/angular.min.js'></script>
+	<style type="text/css">
+		fieldset{
+			border-color: tan;
+		}
+		legend{
+			color:lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<fieldset ng-init='cost=10;num=1'>
+	<!-- ng-init 指令执行给定的表达式 -->
+		<legend  style="margin-bottom:20px">价格计算器：</legend>
+		<div style="margin-bottom:20px">
+			单价：<input type="number" ng-model='cost'/>
+		</div>
+		<div  style="margin-bottom:20px">
+			数量：<input type="number" ng-model='num'/>
+		</div>
+		<div  style="margin-bottom:20px">
+			总价：{{cost * num}}
+		</div>
+	</fieldset>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<fieldset id="">
+				<legend>orderBy</legend>
+				<table>
+					<tr>
+						<th ng-click ="cusOrder('name')">姓名</th>
+						<th ng-click ="cusOrder('phone')">电话号码</th>
+						<th ng-click ="cusOrder('age')">年龄</th>
+					</tr>
+					<tr ng-repeat = 'people in peoples | orderBy:orderTag'>
+						<td>{{people.name}}</td>
+						<td>{{people.phone}}</td>
+						<td>{{people.age}}</td>
+					</tr>
+					
+				</table>
+			</fieldset>
+			
+		</div>
+		
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.peoples = [
+					{name:'张三',phone:'235689',age:18},
+					{name:'李四',phone:'2356489',age:25},
+					{name:'王五',phone:'2356489',age:16},
+					{name:'赵六',phone:'2356489',age:88},
+					{name:'宝宝',phone:'2356489',age:88},
+				];
+				/*console.log(encodeURI("张三")+"张三");
+				console.log(encodeURI("李四")+"李四");
+				console.log(encodeURI("王五")+"王五");
+				console.log(encodeURI("赵六")+"赵六");
+				console.log(encodeURI("宝宝")+"宝宝");*/
+				$scope.orderTag = 'name';
+				$scope.cusOrder = function(a){
+					console.log(a);
+					$scope.orderTag = a;
+				}
+			}])
+		</script>
+	</body>
+</html>

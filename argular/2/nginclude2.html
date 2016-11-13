@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-include</title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body>
+		<div  ng-controller='myCtrl'>
+			<!--ng-option的返回值给ng-controller对象  ng-controller建立参数-->
+			<select ng-model='selectName' ng-options='y.name for (x,y) in templates'>
+				<option value="">(blank)</option>
+			</select>
+			<!--url of the template:    <code>{{template.url}}</code>-->
+			<hr />
+			选择的模板是：{{selectName.name}}
+			<div>
+				<!--
+					3.ng-include引入外来的模板文件
+					1.ng-include如果里面是一个字符串的话 需要添加单引号
+					2.如果是一个数据模型的话，不用添加单引号 它相当于我们的变量
+				-->
+				<div ng-include="selectName.url"></div>
+			</div>
+			<hr />
+			选择的模板是：{{selectName.url}}
+		</div>
+		<script>
+			var myApp = angular.module("myApp",[]);
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.templates = [{
+					name:'头部',
+					url:'tmp/heder.html'
+				},{
+					name:'中心部分',
+					url:"tmp/section.html"
+				},{
+					name:'尾部',
+					url:'tmp/footer.html'
+				}];
+				//要记住加入$scope
+				$scope.selectName = $scope.templates[0];
+			}])
+		</script>
+	</body>
+</html>

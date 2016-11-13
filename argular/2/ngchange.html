@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-include</title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body ng-controller= 'myCtrl'>
+		<input type="text" ng-model='cusInput' ng-change='cusChange()'  />
+		<hr />
+		当前数据模型为：{{cusInput}}
+		<script>
+			var myApp = angular.module('myApp',[]);
+			myApp.controller('myCtrl',["$scope",function($scope){
+//				$scope.cusInput='123';
+				$scope.cusChange = function(){
+					if($scope.cusInput === '1'){
+						alert('maomao');
+					}
+					console.log($scope.cusInput);
+				}
+			}])
+		</script>
+	</body>
+</html>

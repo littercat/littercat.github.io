@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script src='js/jquery-2.1.0.js'></script>
+		<script>
+			$.ajax({
+				type:'GET',
+				url:'tmp/heder.html',
+				success:function(data){
+					console.log(data);
+					$('body').append(data);
+				}
+			})
+			$.ajax({
+				type:'GET',
+				url:'tmp/footer.html',
+				success:function(data){
+					console.log(data);
+					$('body').append(data);
+				}
+			})
+		</script>
+	</body>
+</html>

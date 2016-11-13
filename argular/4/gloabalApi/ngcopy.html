@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		 <meta charset="utf-8">
+	    <!-- SEO  -->
+	    <meta name="keywords" content="" />
+	    <meta name="description" content="" />
+	    <meta name="author" content="" />
+	    <!-- 苹果专用 -->
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 简单移动端适配 -->
+	   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 图标 -->
+		<link rel="shortcut icon" href="">
+	    
+	    <title>全局API</title>
+	    <script src='../js/angular.min.js'></script>
+	    <link rel="stylesheet" href="">
+	</head>
+	<body ng-controller='myCtrl'>
+		<div>
+			{{name}}
+		</div>
+		<script>
+			var myApp = angular.module('myApp',[]);
+			myApp.controller('myCtrl',['$scope',function($scope){
+				var peopleA = {
+					name:'maomao',
+					age:'18',
+					cusAcction:function(){
+						console.log('丫丫')
+					}
+				}
+				var peopleB= {};
+				//深拷贝
+				var objB = angular.copy(peopleA,peopleB);
+				delete peopleA;
+				delete peopleB;
+				console.log(peopleA)
+				console.log('A对象')
+				console.log(peopleA)
+				console.log('B对象')
+				console.log(peopleB)
+				console.log('最后生成对象')
+				console.log(objB);
+			}])
+		</script>
+	</body>
+</html>

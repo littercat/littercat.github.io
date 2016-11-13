@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		 <meta charset="utf-8">
+	    <!-- SEO  -->
+	    <meta name="keywords" content="" />
+	    <meta name="description" content="" />
+	    <meta name="author" content="" />
+	    <!-- 苹果专用 -->
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 简单移动端适配 -->
+	   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 图标 -->
+		<link rel="shortcut icon" href="">
+	    
+	    <title>全局API</title>
+	    <script src='../js/angular.min.js'></script>
+	    <link rel="stylesheet" href="">
+	</head>
+	<body >
+		<div id='div0' ng-controller='myCtrl'>
+			{{name}}
+		</div>
+		<div id='div1' ng-controller='myCtrl1'>
+			{{name}}
+		</div>
+		<button onclick="addFuc()">添加多个模块绑定实现</button>
+		<script>
+			var myApp = angular.module('myApp',[]);
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.name='maomao';
+			}])
+			var myApp1 = angular.module('myApp1',[]);
+			myApp1.controller('myCtrl1',['$scope',function($scope){
+				$scope.name = '毛毛'	;
+			}])
+			function addFuc(){
+				var div0 = document.getElementById('div0');
+				angular.bootstrap(div0,['myApp']);
+				//bootstrap 
+				/*1.动态添加模块
+				 * 我们可以在想要添加的地方再添加 我们可以人为的控制我们模块的加载
+				2.当有多个模块出现一个页面的时候,可以解决ng-app只能绑定一个模块的缺陷
+				我们的ng-app在页面只能有一个,意味着他只能绑定一个模块 当有多个模块同时ng-app绑定的时候,我们只能看到第一一个绑定的模块显示其余的不影响*/
+				var div1 = document.getElementById('div1');
+				angular.bootstrap(div1,['myApp1']);
+			}
+			
+		</script>
+	</body>
+</html>

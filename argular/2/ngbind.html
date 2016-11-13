@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>ng-bind</title>
+	<script type="text/javascript" src='js/angular.min.js'></script>
+	<style type="text/css">
+		div{
+			background: lightgreen;
+			text-align: center;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="myCtrl">
+		<span ng-bind="name"></span>
+		<!-- ng-bind  绑定 HTML元素到应用程序数据 使用给定 的变量或表达式的值来替换html元素的内容  也可以获得html中的值-->
+	</div>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', []);
+		myApp.controller('myCtrl', ['$scope', function ($scope) {
+			$scope.name = '赵晓亚';
+		}])
+	</script>
+</body>
+</html>

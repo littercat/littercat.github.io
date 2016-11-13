@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/angular.min.js'></script>
+</head>
+<body>
+
+	<div ng-controller='myCtrl'>
+		<div ng-click="cusFuc('123')">按钮</div>
+		<div ng-click="cusFuc(cusTag)" ng-init = 0>按钮1</div>
+		<div ng-click="cusFuc(cusTag)" onClick="myFuc('5555')">按钮2</div>
+		<div ng-click="count=count+1" ng-init = "count=0">按钮3 &nbsp;<span>{{count}}</span></div>
+	</div>
+	<script>
+		var myApp = angular.module('myApp',[]);
+		myApp.controller('myCtrl',['$scope',function($scope){
+			$scope.cusTag = '456';
+		
+			$scope.cusFuc = function(a){
+				var t = 25;
+				for(var i=0;i<30;i++){
+					console.log('当前i的值为' + i );
+					if( i == t ){
+						console.log(a)
+					}
+				}
+				console.log(a)
+			
+			}
+			
+		}])
+		function myFuc(b){
+			console.log(b)
+		}
+	</script>
+</body>
+</html>

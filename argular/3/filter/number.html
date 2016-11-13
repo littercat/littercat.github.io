@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<fieldset id="">
+				<legend>货币格式</legend>
+				简单实用默认的，会自动添加“$”符号:<span>{{amount | currency}}</span>
+				<hr />
+				自定义货币前面所添加的提示字符串：<span>{{amount | currency:'REB ￥'}}</span>
+				<hr />
+				<!--实现舍去小数点 引入js的版本为1.58版本  currency不可以为空值
+					这里最后一个小数点后位数舍弃：他们的最终值采用四舍五入
+				-->
+				小数点后位的舍弃量：<span>{{amount | currency:'￥':0}}</span>
+	
+			</fieldset>
+			
+		</div>
+		
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.amount = 1234.567;
+				
+			}])
+		</script>
+	</body>
+</html>

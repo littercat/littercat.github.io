@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-include</title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body ng-controller='myCtrl'>
+		<!--需要添加ng-model='selectedName' 要不然没有效果
+			添加一个option为初始值 添加多个只会出现第一个 第一个为初始值
+		-->
+		<select name=""  ng-model='selectedName' ng-options="item for item in names">
+			<option value="">(blank)</option>
+		</select>
+		<script type='text/javascript'>
+		var myApp = angular.module('myApp',[]);
+		myApp.controller('myCtrl',['$scope',function($scope){
+			$scope.names = ['maomao','男','ml','女']
+		}])
+			
+		</script>
+	</body>
+</html>

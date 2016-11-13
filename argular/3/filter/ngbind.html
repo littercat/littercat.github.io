@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../js/angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<!--转成大写-->
+			{{name |uppercase}}
+			<hr />
+			<!--转成小写-->
+			{{name1 | lowercase}}
+			<hr />
+			{{(name1+name) | uppercase}}
+			<hr />
+			{{(name1+name) | lowercase}}
+		</div>
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.name='maomao';
+				$scope.name1='MAOMAO';
+			}])
+		</script>
+	</body>
+</html>

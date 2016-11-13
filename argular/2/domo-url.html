@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body>
+		<fieldset id="">
+			<legend>定义元素指令</legend>
+			<div mao-mao></div>
+		</fieldset>
+		<script type="text/javascript">
+			var myApp = angular.module('myApp',[])
+			myApp.directive('maoMao',function(){
+				return {
+					restrict:'A',
+					replace:true, 
+					templateUrl:'tmp/heder.html'
+					//如果heder.html有一个最外层的标签可以使用replace
+					//如果有多个兄弟标签或者没有标签直接写内容不能用replace
+				}
+			})
+		</script>
+	</body>
+</html>

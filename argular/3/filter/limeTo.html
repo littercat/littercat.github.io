@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../angular.min.js'></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl'>
+			<fieldset id="">
+				<legend>截取操作</legend>
+				<!--截取数据-->
+				<span>{{amount | limitTo:2}}结果为12</span>
+				<hr />
+				<span>{{amount | limitTo:-2}}结果为67</span>
+				<hr />
+				<!--第一个参数截取的位数 第二个参数为2 按搜引走 0,1,2-->
+				<span>{{amount | limitTo:3:2}}结果为34.</span>
+				<hr />
+				<span>{{cusStr | limitTo:3:2}}结果为llo</span>
+				<hr />
+				<span>{{cusStr | limitTo:5:0}}结果为hello</span>
+				<hr />
+				<span>{{cusArray | limitTo:2:0}}结果为</span>
+				<hr />
+				<span>{{cusArray | limitTo:1}}结果为</span>
+				<hr />
+				<span>{{cusArray | limitTo:2:2}}结果为</span>
+				<hr />
+			</fieldset>
+			
+		</div>
+		
+		<script>
+			var myApp = angular.module('myApp',[])
+			myApp.controller('myCtrl',['$scope',function($scope){
+				$scope.amount = 1234.567;
+				$scope.cusStr = 'helloWorld!';
+				$scope.cusArray = [
+					'name','age','maomao','27','hometown'
+				]
+			}])
+		</script>
+	</body>
+</html>

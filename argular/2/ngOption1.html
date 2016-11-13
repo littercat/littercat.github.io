@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-include</title>
+		<script src='js/angular.min.js'></script>
+	</head>
+	<body ng-controller='myCtrl'>
+		<!--需要添加ng-model='selectedName' 要不然没有效果
+			添加一个option为初始值 添加多个只会出现第一个 第一个为初始值
+		-->
+		<!--使用对象作为数据源 x为key值 y为value值-->
+		<select name=""  ng-model='selectName' ng-options="y.name for (x,y) in names">
+		<!--<select name=""  ng-model='selectName' ng-options="x for (x,y) in names">-->
+		<!--<select name=""  ng-model='selectName' ng-options="x.age for x in names">-->	
+			<option value="">(blank)</option>
+		</select>
+		<script type='text/javascript'>
+		var myApp = angular.module('myApp',[]);
+		myApp.controller('myCtrl',['$scope',function($scope){
+			$scope.names = [
+				{name:'maomao',age:'23'},
+				{name:'大飞',age:'23'},
+				{name:'凯shi',age:'23'},
+				{name:'小马',age:'23'},
+				{name:'小梦',age:'23'},
+			]
+		}])
+			
+		</script>
+	</body>
+</html>
