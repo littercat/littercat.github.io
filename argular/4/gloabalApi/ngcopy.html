@@ -1,51 +1,68 @@
-<!DOCTYPE html>
-<html ng-app='myApp'>
-	<head>
-		 <meta charset="utf-8">
-	    <!-- SEO  -->
-	    <meta name="keywords" content="" />
-	    <meta name="description" content="" />
-	    <meta name="author" content="" />
-	    <!-- 苹果专用 -->
-	    <meta name="apple-mobile-web-app-capable" content="yes" />
-	    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
-	    <meta name="format-detection" content="telephone=no" />
-	    <!-- 简单移动端适配 -->
-	   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-	    <!-- 图标 -->
-		<link rel="shortcut icon" href="">
-	    
-	    <title>全局API</title>
-	    <script src='../js/angular.min.js'></script>
-	    <link rel="stylesheet" href="">
-	</head>
-	<body ng-controller='myCtrl'>
-		<div>
-			{{name}}
-		</div>
-		<script>
-			var myApp = angular.module('myApp',[]);
-			myApp.controller('myCtrl',['$scope',function($scope){
-				var peopleA = {
-					name:'maomao',
-					age:'18',
-					cusAcction:function(){
-						console.log('丫丫')
-					}
-				}
-				var peopleB= {};
-				//深拷贝
-				var objB = angular.copy(peopleA,peopleB);
-				delete peopleA;
-				delete peopleB;
-				console.log(peopleA)
-				console.log('A对象')
-				console.log(peopleA)
-				console.log('B对象')
-				console.log(peopleB)
-				console.log('最后生成对象')
-				console.log(objB);
-			}])
-		</script>
-	</body>
+<!doctype html>
+<html lang="en" ng-app = 'myApp'>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src='../js/angular.min.js'></script>
+</head>
+<body ng-controller = 'myCtrl'>
+	
+</body>
+<script>
+	var a = 'test';
+	var b;
+	/*浅拷贝是指源对象与拷贝对象共用一份实体，仅仅是引用的变量不同（名称不同）。对其中任何一个对象的改动都会影响另外一个对象。举个例子，一个人一开始叫张三，后来改名叫李四了，可是还是同一个人，不管是张三缺胳膊少腿还是李四缺胳膊少腿，都是这个人倒霉。 深拷贝是指源对象与拷贝对象互相独立，其中任何一个对象的改动都不会对另外一个对象造成影响。举个例子，一个人名叫张三，后来用他克隆（假设法律允许）了另外一个人，叫李四，不管是张三缺胳膊少腿还是李四缺胳膊少腿都不会影响另外一个人。比较典型的就是Value（值）对象，如预定义类型Int32，Double，以及结构（struct），枚举（Enum）等。*/
+	//浅拷贝是指源对象与拷贝对象共用一份实体，仅仅是引用的变量不同（名称不同）
+	console.log(a);
+	console.log(b);
+	b = a;
+	console.log(a);
+	console.log(b);
+	
+	a = null;
+//	b = a;
+	console.log(a);
+	console.log(b);
+	
+	//深拷贝
+	
+	
+	
+	var myApp = angular.module('myApp',[]);
+    	myApp.controller('myCtrl',['$scope',function($scope){
+    		var cusObja = {
+    			name:"1609",
+    			age:"18",
+    			cusAction:function(){
+    				console.log("我是A对象");
+    			}
+    		}
+    		var cusObjb = {};
+    		//深copy深拷贝是指源对象与拷贝对象互相独立，其中任何一个对象的改动都不会对另外一个对象造成影响。
+    		var objC = angular.copy(cusObja,cusObjb);
+    		console.log("A对象：");
+    		console.log(cusObja)
+    		console.log("B对象：")
+    		console.log(cusObjb);
+    		console.log("最后ng生成对象");
+    		console.log(objC);
+    		cusObja.name="1610";
+    		console.log("A对象：");
+    		console.log(cusObja)
+    		console.log("B对象：")
+    		console.log(cusObjb);
+    		console.log("最后ng生成对象");
+    		console.log(objC);
+    		//普通变量也是
+	  		var m =10;
+	  		var n=m;
+	  		m=20;
+	  		console.log("m");
+	  		console.log(m);
+	  		console.log("n");
+	  		console.log(n);
+    		
+    	}])
+
+</script>
 </html>
