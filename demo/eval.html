@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>eval()</title>
+	</head>
+
+	<body>
+		<script>
+			//只有当eval被直接调用时才会预期在当前作用域下执行,否则eval将在全局作用于下执行
+			/*var foo = 1;
+			function test() {
+		    	var foo = 2;
+		    	eval('foo = 3');//这时foo被赋值为3
+		    	console.dir(eval);
+		    	return foo;
+			}
+			alert(test()); // 3
+			alert(foo); // 1*/
+		
+			var f1 = 1;
+			function test1() {
+		    	var f1 = 2;
+		    	var bar = eval;
+		    	bar('f1 = 3');
+//		    	console.log(f1);//2
+//		    	 console.dir(eval);
+		    	return f1;
+			}
+			alert(test1()); //2
+			alert(f1); //3
+
+			/*function a(){
+				console.log(1);
+			}
+			function b(){
+				function a(){
+				console.log(3);
+				}
+				setTimeout('a();',0);
+			}
+			b();//1*/
+
+			//特别注意:局部变量;
+			var vau = 10;
+
+			function show() {
+				alert(vau); //undefied
+				if(!vau) {
+					var vau = 100;
+				}
+				alert(vau); //100
+			}
+			//show();
+
+			var a = "hello";
+			//alert(!a); //false;
+		</script>
+
+	</body>
+
+</html>
