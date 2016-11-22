@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+  
+    <link rel="stylesheet" href="css/app.css">
+    
+    <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    
+</head>
+
+<body>
+    <div id="container">
+    	
+    </div>
+  
+    <script type="text/babel">
+    	var ClassItem = React.createClass({
+    		render:function(){
+    			return (
+    				<div class="cItem">
+    					<img src="img/1.jpg" />
+    					<div>上衣</div>
+    				</div>
+    			)
+    		}
+    	})
+    	
+    	var HpAClassItem = React.createClass({
+    		render:function(){
+    			 
+    			var templateArray = [];
+    			for(var i=0;i<16;i++){
+    				var tmp = <ClassItem />;
+    				templateArray.push(tmp);
+    			}
+    		
+    			return (
+    				<div>
+    					{templateArray}
+    				</div>
+    			)
+    		}
+    	})
+    	
+    	ReactDOM.render(
+    		<HpAClassItem />,
+    		document.getElementById('container')
+    	)
+    	
+    	
+    	
+    </script>
+</body>
+
+</html>

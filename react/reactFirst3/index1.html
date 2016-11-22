@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+</head>
+
+<body>
+	
+	<!--
+		注意：
+			1.我们的ReactJS主要的一个特点是JSX语法【即JavaScript XML语法，Javascript语法扩展】
+			2.因为是JSX语法，所以在执行上与传统上的JavaScript语法不同，为此需要
+				1>引入JSX语法编译的文件：browser.min.js
+				2>javascript语句标签<script>标签需要把类型改写为babel
+			3.ReactDOM是react-dom.min.js里面用来把react渲染到页面中的方法
+				ReactDOM.render(参数1【模板，想要插入的模板】,参数2【插入的位置】)
+				因为是方法，因此里面参数之间使用逗号进行分割
+	-->
+    
+	<div id="root"></div>
+	
+    <script type="text/babel">
+    	ReactDOM.render(
+    		<div>
+    			<h1>Hello, world!</h1>
+    			<h2>1609世界你好!</h2>
+    		</div>,
+  			document.getElementById('root')
+    	)
+    	<!--ReactDOM.render([组件],[插入点]);-->
+    	
+    </script>
+</body>
+
+</html>

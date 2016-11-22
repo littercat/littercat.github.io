@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    <style>
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	
+    	footer{
+    		display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		align-items: center;
+    		position: fixed;
+    		bottom: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 50px;
+    	}
+    	.fItem{
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		justify-content: center;
+    		width: 25%;
+    		height: 100%;
+    		align-self: center;
+    		background-color: #999999;
+    	}
+    	.noneName{
+    		display: none;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	
+	
+   	<script type="text/babel">
+   		var childTmpC;
+   		var fatherTmpC;
+   		var FooterChild = React.createClass({
+   			render:function(){
+   				return (
+   					<div>这是一个子组件</div>
+   				)
+   			},
+   			componentWillReceiveProps:function(){
+   				console.log("这是子组件的属性更新");
+   			}
+   		});
+   		
+		var Footer = React.createClass({
+			handleClick:function(ev){
+				var tagID = ev.target.id;
+				this.props.Kjin = "18";
+				console.log(this);
+				if(tagID == "btn1"){
+					console.log(childTmpC);
+					childTmpC.props.dataChild.age="1234";
+				}
+				
+			},
+   			render:function(){
+   				return(
+   					<div>
+	   					<div id="testDiv">测试位置</div>
+	   					<footer>
+	   						<button id="btn1" onClick={this.handleClick}>按钮1</button>
+	   						<button id="btn2" onClick={this.handleClick}>按钮2</button>
+	   						<button id="btn3" onClick={this.handleClick}>按钮3</button>
+	   						<button id="btn4" onClick={this.handleClick}>按钮4</button>
+	   					</footer>
+   					</div>
+   				)
+   			},
+   			componentWillReceiveProps:function(nextProps){
+   				console.log(nextProps);
+   				console.log("这是父组件的属性更新");
+   			},
+   			componentWillMount:function(){
+   				this.props.Kjin = "18";
+   			},
+   			componentDidMount:function(){
+   				console.log("组件已经加载");
+   				var childData = {
+   					test:"123"
+   				}
+				childTmpC = ReactDOM.render(
+   					<FooterChild dataChild ={childData} />,
+   					document.getElementById('testDiv')
+   				)
+   				
+   			}
+   		})
+   		
+   		var dataTest = {
+   			"test":"123"
+   		}
+   		fatherTmpC = ReactDOM.render(
+   			<Footer  data={dataTest}/>,
+   			document.body
+   		)
+   		
+   	
+   	</script>
+   	
+</body>
+
+</html>

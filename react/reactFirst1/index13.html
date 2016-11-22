@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	header{
+    		width: 100%;
+    		height: 45px;
+    		background-color: pink;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<div id="root"></div>
+	
+	
+   	<script type="text/babel">
+   
+   		var Header = React.createClass({
+   			getInitialState:function(){
+   				return ({
+   					"tag":"false"
+   				})
+   			},
+   			handleChange:function(){
+   				var Inputlength = document.getElementById('testInput').value;
+   				console.log(this);
+   				if(Inputlength.length>10){
+   				{/*setState设置状态 */}
+   					this.setState({"tag":"true"});
+   				}
+   				if(this.state.tag == "true"){
+   					alert("下课了！");
+   				}
+   			},
+   			render:function(){
+   				console.log(this);
+   				if(this.state.tag=="false"){
+   					console.log("准备好，我们即将下课了");
+   				}
+   				return (
+   					<div>
+   						<input type="text" onChange={this.handleChange} id="testInput"/>
+   					</div>
+   				)
+   			}
+   		})
+
+		var tmpData = {
+			"name":"1609",
+			"age":"23",
+		}
+   		ReactDOM.render(
+   			<Header data={tmpData}/>,
+   			document.body
+   		)
+   		
+   	</script>
+</body>
+
+</html>

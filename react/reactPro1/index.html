@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+  
+    <link rel="stylesheet" href="css/app.css">
+    
+    <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    
+</head>
+
+<body>
+    <div id="header">
+    	
+    </div>
+    <div id="banner">
+    	
+    </div>
+    <div id="">
+    	<div class="leftC">
+    		
+    	</div>
+		<div class="rightC">
+			<div class="rTop">
+				
+			</div>
+			<div class="rBottom">
+				<div  class="rbL">
+					
+				</div>
+				<div class="rbR">
+					
+				</div>
+			</div>
+		</div>    	
+    </div>
+    
+    <div>
+    	正在流行热门分类
+    </div>
+    <div id="allClass">
+    	
+    </div>
+
+	<script type="text/babel" src="tmp/header.js" ></script>
+	<script type="text/babel" src="tmp/banner.js" ></script>
+    <script type="text/babel">
+    	{/*
+    	 	1.写事件的时候定义一个函数需要在后面加上逗号{json对象形式}
+    	 	2.我们绑定click事件 onclick => onClick
+    	 	3.this.事件名称后面不加括号
+    	 
+    	 */}
+    	var ClassItem = React.createClass({
+    		render:function(){
+    			return (
+    				<div className="cItem">
+    					<img src="" />
+    					<div>上衣</div>
+    				</div>
+    			)
+    		}
+    	})
+    	
+    	var HpAClassItem = React.createClass({
+    		render:function(){
+    			var templateArray = [];
+    			for(var i=0;i<16;i++){
+    				var tmp = <ClassItem />;
+    				templateArray.push(tmp);
+    				console.log(tmp);
+    			}
+    			return (
+    				<div>
+    					{templateArray}
+    				</div>
+    			)
+    		}
+    	})
+    	ReactDOM.render(
+    		<HpAClassItem />,
+  			document.getElementById('allClass')
+    	)
+    	
+    	
+    	
+    </script>
+</body>
+
+</html>

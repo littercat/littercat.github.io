@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	header{
+    		width: 100%;
+    		height: 45px;
+    		background-color: pink;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<div id="root"></div>
+	
+	
+   	<script type="text/babel">
+   	
+   		var HeaderChild = React.createClass({
+   			handleClick:function(){
+   				
+   			},
+   			render:function(){
+   				
+   				return (
+   					<div className="title" onClick={this.handleClick}>{"俺稀罕你"}</div>
+   				)
+   			}
+   		})
+ 
+   		console.log(React);
+   		{/*
+   			初始化状态：state
+   			开关标志，state保存关于我们组件的各种状态，包括组件中标志【组件样式显示与否。。。】
+   			当我们设置组件的状态或者改变我们的属性的时候，我们的组件会再次调用我们的组件自身的render方法
+   			改变状态采用setState方法
+   			初始化状态采用getInitialState
+   		*/}
+   		var i=0;
+   		var Header = React.createClass({
+   			getInitialState:function(){
+   				return (
+	   				{
+	   					"tag":"true"
+	   				}
+   				)
+   			},
+   			handleChange:function(){
+   				this.setState({"tag":"false"});
+   				
+   			},
+   			render:function(){
+   				console.log(this);
+   				console.log(i);
+				console.log(this.state.tag);
+   				return (
+   					<div>
+   						<input type="text" onChange={this.handleChange}/>
+   					</div>
+   				)
+   			}
+   		})
+   
+  		{/*
+  			这里模拟的是从后台接受数据  
+  		  
+  		*/}
+ 		
+ 
+ 
+ 
+   		ReactDOM.render(
+   			<Header />,
+   			document.body
+   		)
+   		
+   	</script>
+</body>
+
+</html>

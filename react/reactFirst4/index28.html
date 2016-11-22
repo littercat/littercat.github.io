@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    <style>
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	
+    	footer{
+    		display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		align-items: center;
+    		position: fixed;
+    		bottom: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 50px;
+    	}
+    	#cusView{
+    		width: 100%;
+    		top: 0;
+    		bottom: 50px;
+    		position: absolute;
+    		background-color: green;
+    	}
+    	
+    </style>
+</head>
+
+<body>
+	
+	
+	<section id="cusView">
+		
+	</section>
+	<div id="footer">
+		
+	</div>
+	
+   	<script type="text/babel">
+   		var HomePage = React.createClass({
+   			render:function(){
+   				return(
+   					<div>
+   						我们是主页
+   					</div>
+   				)
+   			}
+   		})
+   		
+   		var ListPage = React.createClass({
+   			render:function(){
+   				return(
+   					<div>
+   						我们是良品
+   					</div>
+   				)
+   			}
+   		})
+   		
+   		
+   		var ClassPage = React.createClass({
+   			render:function(){
+   				return(
+   					<div>
+   						我们是分类
+   					</div>
+   				)
+   			}
+   		})
+   		
+   		var MePage = React.createClass({
+   			render:function(){
+   				return(
+   					<div>
+   						我们是我的主页
+   					</div>
+   				)
+   			}
+   		})
+   		
+   		
+   
+   		var Footer = React.createClass({
+   			handleClick:function(ev){
+   				console.log("当前页面为" + ev.target.id);
+   				var tagID = ev.target.id;
+   				
+   				var tmpView = document.getElementById('cusView');
+   				ReactDOM.unmountComponentAtNode(tmpView);
+   				
+   				if(tagID=="homePage"){
+   					ReactDOM.render(
+			   			<HomePage />,
+			   			document.getElementById('cusView')
+			   		);
+   					
+   				}else if(tagID=="listPage"){
+   					ReactDOM.render(
+			   			<ListPage />,
+			   			document.getElementById('cusView')
+			   		);
+   					
+   				}else if(tagID=="classPage"){
+   					ReactDOM.render(
+			   			<ClassPage />,
+			   			document.getElementById('cusView')
+			   		);
+   				}else{
+   					ReactDOM.render(
+			   			<MePage />,
+			   			document.getElementById('cusView')
+			   		);
+   				}
+   				
+   			},
+   			render:function(){
+   				return (
+   					<footer>
+   						<button id="homePage" onClick={this.handleClick}>首页</button>
+   						<button id="listPage" onClick={this.handleClick}>良品</button>
+   						<button id="classPage" onClick={this.handleClick}>分类</button>
+   						<button id="mePage" onClick={this.handleClick}>我的</button>
+   					</footer>
+   				)
+   			},
+   			componentDidMount:function(){
+   				ReactDOM.render(
+		   			<HomePage />,
+		   			document.getElementById('cusView')
+		   		);
+   			}
+   		})
+   		ReactDOM.render(
+   			<Footer />,
+   			document.getElementById('footer')
+   		)
+   		
+   	</script>
+   	
+</body>
+
+</html>

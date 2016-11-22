@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    <style>
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	
+    	footer{
+    		display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		align-items: center;
+    		position: fixed;
+    		bottom: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 50px;
+    	}
+    	.fItem{
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		justify-content: center;
+    		width: 25%;
+    		height: 100%;
+    		align-self: center;
+    		background-color: #999999;
+    	}
+    	.noneName{
+    		display: none;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	
+	
+   	<script type="text/babel">
+   		
+   		
+   		
+   		
+  
+   		var f_Data = [
+			    {
+			        "iconClass": "icon-yuyin",
+			        "styleName": "fItem",
+			        "ImgName": "noneName",
+			        "spanClass": "iconfont icon-yuyin",
+			        "text": {
+			            "cusrr": "",
+			            "value": "美女"
+			        }
+			    },
+			    {
+			        "iconClass": "icon-liwu",
+			        "styleName": "fItem",
+			        "ImgName": "noneName",
+			        "spanClass": "iconfont icon-liwu",
+			        "text": {
+			            "cusrr": "",
+			            "value": "靓仔"
+			        }
+			    },
+			    {
+			        "iconClass": "icon-jushoucanggift",
+			        "styleName": "fItem",
+			        "ImgName": "noneName",
+			        "spanClass": "iconfont icon-jushoucanggift",
+			        "text": {
+			            "cusrr": "",
+			            "value": "分类"
+			        }
+			    },
+			    {
+			        "iconClass": "icon-mian",
+			        "styleName": "fItem",
+			        "ImgName": "noneName",
+			        "spanClass": "iconfont icon-mian",
+			        "text": {
+			            "cusrr": "",
+			            "value": "我的"
+			        }
+			    }
+			]
+			
+			
+		var Footer = React.createClass({
+   			render:function(){
+   				console.log(this);
+   				return(
+   					<footer>
+   						测试
+   					</footer>
+   				)
+   			}
+   		})
+   		
+   		
+   		ReactDOM.render(
+   			<Footer  {...f_Data}/>,
+   			document.body
+   		)
+   		
+   	</script>
+</body>
+
+</html>

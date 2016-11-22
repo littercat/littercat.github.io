@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+    
+    <title>模板</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <script type="text/javascript" src="js/react.min.js" ></script>
+    <script type="text/javascript" src="js/react-dom.min.js" ></script>
+    <script type="text/javascript" src="js/browser.min.js" ></script>
+    <style>
+    	html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		border: 0;
+    	}
+    	
+    	footer{
+    		display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-around;
+    		align-items: center;
+    		position: fixed;
+    		bottom: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 50px;
+    	}
+    	.fItem{
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		justify-content: center;
+    		width: 25%;
+    		height: 100%;
+    		align-self: center;
+    		background-color: #999999;
+    	}
+    	.noneName{
+    		display: none;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<div id="test"></div>
+	
+   	<script type="text/babel">
+   		
+   		var childTmp;
+   		
+   		var ChildC = React.createClass({
+   			render:function(){
+   				return (
+   					<div>
+   						<h3>这是一个子组件</h3>
+   					</div>
+   				)
+   			},
+   			componentWillReceiveProps:function(){
+   				console.log("子组件属性即将设置");
+   			}
+   			
+   		})
+   		
+   		var Testc  = React.createClass({
+   			render:function(){
+   				return (
+   					<div>这是测试组件</div>
+   				)
+   			}
+   		})
+   		
+   		var Content = React.createClass({
+   			getInitialState:function(){
+				console.log("状态初始化");
+				return ({
+					"data":"ii"
+				})
+			},
+   			handleChange:function(){
+   				childTmp.props.data.test="34556"
+   				console.log(childTmp);
+				var testNode = document.getElementById('childDiv')  	
+   				ReactDOM.unmountComponentAtNode(testNode);
+   			},
+   			render:function(){
+   				console.log("123");
+   				
+   				return (
+   					<div>
+   						<h1>父组件</h1>
+   						<input type="text" onChange={this.handleChange} />
+   						<div id="childDiv">
+   							
+   						</div>
+   						<div id="jjj">
+   							<Testc />
+   						</div>
+   						
+   					</div>
+   				)
+   			},
+   			componentDidMount:function(){
+   				var datatmp ={
+   					test:"123"
+   				}
+   				childTmp = ReactDOM.render(
+   					<ChildC  data={datatmp}/>,
+   					document.getElementById('childDiv')
+   				)
+   				console.log(childTmp);
+   			},
+   			componentWillReceiveProps:function(){
+   				console.log("父组件属性即将设置");
+   			}
+   			
+   		})
+   		ReactDOM.render(
+   			<Content />,
+   			document.getElementById('test')
+   		)
+   	
+   	</script>
+   	
+</body>
+
+</html>
