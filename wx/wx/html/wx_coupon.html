@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" style = 'width:100%;height:100%;overflow: hidden'>
+<head>
+	<meta charset="UTF-8">
+	<title>coupon优惠券</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../css/swiper-3.4.0.min.css">
+	<link rel="stylesheet" href="../css/wx-css.css">
+	<script src="../js/jquery-2.2.3.min.js"></script>
+	<script src="../js/zepto.js"></script>
+	<script src ='../js/jquery.liMarquee.js'></script>
+	<script src ='../js/jquery-barcode.js'></script>
+	<script src='../js/jquery.qrcode.min.js'></script>
+	<script src='../js/swiper-3.4.0.jquery.min.js'></script>
+	<script src='../js/rem.js'></script>
+	<script src = '../js/wx.js'></script>
+</head>
+<body style = 'width:100%;height:100%;overflow: hidden'>
+	<div class="coupon_header">
+		<h1 class="coupon_title">
+		    <a href="WX_index.html" class='iconfont'>&#xe60b;</a>
+		    <a class="headlink" href="WX_index.html">进入 恺宾男装</a>
+		</h1>
+	</div>
+	<div class="coupon_content">
+		<div id="successTips" class="ok hide">
+		    <div>恭喜您！成功领取<strong id="couponValue">0</strong>元欢迎券</div>
+		    <div >优惠券编码：<span id="couponCode"></span></div>
+            <div>进店消费，凭手机号码即可使用</div>
+            <div class="close" >关闭</div>
+        </div>
+        <div class="loadTips">正在领取中...</div>
+		<div id="successCover" class="cover hide"></div>
+		<div class="top-c">
+			<div class="welcome">恭喜您！收到一张<strong>优惠券</strong></div>
+		</div>
+		<div class="coupon_price clear">
+			<div class='left'>¥</div>
+			<div id="couponValueZone" class='left'>5</div>
+			<div class='left'>
+				<div class="bold" id='coupon_p' >YUAN</div>
+				<div class="bold coupon_bold">优惠券</div>
+			</div>
+		</div>
+			<div class="data">
+			    <div class="data-c">使用限制：<span>无限制</span></div>
+				<div class="data-c">有效期至 2017.02.01截止 请及时领取并使用</div>
+				<div class="data-c">地址:上海市嘉定区沪宜公路</div>
+			</div>
+		<div class="ticket-c">
+			<div id="barcode"></div>
+			<div class="disaccout-code welcome bold hide">优惠编码: <strong></strong></div>
+		</div>
+		<div class='phone hide'>
+			<div class="codec-c formInput">
+			    <div><input id="usrPhone" type="tel" class="form" placeholder="请输入您的手机号码" value=""></div>
+			</div>
+			<div class="codec-c formInput ">
+			    <div><input id="usrName" type="text" class="form" placeholder="请输入您的姓名" value=""></div>
+			</div>
+		</div>
+		
+		<div class="codec-c clickObtain">
+			<div id="btnGetCoupon" class="get bold">点击领取</div>
+		</div>
+	</div>
+	<!-- <input id="CouponGroupId" type="hidden" value="19529">
+	<input id="CouponExpire" type="hidden" value="0"> -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+   
+   /************************按钮样式*****************************/
+  *{
+  	font-family:"微软雅黑" ;
+  	font-size: 15px;
+  }
+   .lj-btn-red {
+   	color: #fff;
+   	font-family:"微软雅黑" ;
+   	background-color: #f10215;
+   	border: 1px solid #f10215;
+   }
+   
+   .lj-btn-red:hover,
+   .lj-btn-red:active,
+   .lj-btn-red.hover {
+   	color: #fff;
+   	background-color: #f10215;
+   	border: 1px solid #f10215;
+   }
+   
+   .lj-btn-red.focus,
+   .lj-btn-red:focus,
+   .lj-btn-red:hover {
+   	color: #fff;
+   	text-decoration: none;
+   }
+   
+   .lj-btn-red:hover {
+   	color: #fff;
+   	background-color: #f05356;
+   	border: 1px solid #f05356;
+   }
