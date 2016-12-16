@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品查询</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../css/swiper-3.4.0.min.css">
+	<link rel="stylesheet" href="../css/wx-css.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<script src="../js/plugins/jquery-2.2.3.min.js"></script>
+	<script src="../js/plugins/zepto.js"></script>
+	<script src ='../js/plugins/jquery.liMarquee.js'></script>
+	<script src ='../js/plugins/jquery-barcode.js'></script>
+	<script src='../js/plugins/jquery.qrcode.min.js'></script>
+	<script src='../js/plugins/swiper-3.4.0.jquery.min.js'></script>
+	<script src='../js/plugins/rem.js'></script>
+	<script src = '../js/main.js'></script>
+</head>
+<body>
+	<div class='detal_content total_content carContent'>	
+		<div class='gArtical'>
+			<!-- 头部 -->
+			<div class="detal_header">
+				<div class="header_content">
+				    <a class='back' href="javascript:;" class=''><返回</a>
+				    <h1 class='gTitle'><a class="headlink" href="javascript:;">我的账户</a></h1>
+				</div>
+			</div>
+			<!-- content -->
+			<!-- 顾客登录时的 -->
+			<div class='account'>
+				<div class='account-top'>
+					<div class = 'account-top-content'>
+						<div class='clear'>
+							<img src="../img/avatar2.png" alt="">
+							<a href="javascript:;">啦啦</a>
+						</div>
+					</div>
+				</div>
+				<div class='title-bar'></div>
+				<div class='account-bottom'>
+					<div>
+						<ul>
+							<li class="clear"><a href="wx_myOrder.html">门店订单<span>0</span><i>></i></a></li>
+							<li class='clear'><a href="wx_mycoupon.html">可用优惠券<span>0</span><i>></i></a></li>
+							<li class='clear'><a href="wx_myFaverate.html">我喜欢的<span>0</span><i>></i></a></li>
+							<li class='clear'><a href="wx_myWindow.html">橱窗订单<span>0</span><i>></i></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 顾客未登录时的页面 -->
+			<div class='customerLogin hide'>
+				<section>
+					<div class="wrapped-content">
+                  		<div class="imgAdapt login-avatar-area">
+                    		<img src="../img/avatar2.png"  class="shop-avatar frame center-block" alt="" />
+                    	</div>
+                  		<h6 class="shop-name text-center">恺宾男装</h6>
+                  		<div id="login-form" class="full-width"  data-abide>
+	                   		<p><input type="text" name="UserLoginPhone" id="UserLoginPhone" placeholder="请输入您的手机号码" required /></p>
+	                   		<div class='clear'>
+	                   			<div class="inputCode left">
+		                    		<input id="Verification" type="text" placeholder="请输入验证码" name="validate" required />
+		                    	</div>
+		                   		<div class="code left">
+		                     		<div>
+		                       			 <a href="javascript:void(0)" id="VerificationButton" class="button radius grey validate">发送验证码</a>
+		                      		</div>
+		                    	</div>
+	                   		</div>
+	                    	
+	                   		<p class=''>
+	                   			<input class="button radius full-width grey" type="button" id="UserLoginButton" value="立即登录" disabled="disabled" />
+	                   		</p>
+                  		</div>	
+               		</div>
+				</section>
+			</div>
+		</div>
+		<footer>
+			<ul>
+				<li><a href="wx_index.html"><i class='iconfont'>&#xe60b;</i><span>首页</span></a></li>
+				<li><a href="wx_search.html"><i class='iconfont'>&#xe625;</i><span>搜索</span></a></li>
+				<li><a href="wx_total.html"><i class='iconfont'>&#xe62c;</i><span>全部</span></a></li>
+				<li><a href="wx_car.html"><i class='iconfont'>&#xe601;</i><span>购物车</span></a></li>
+				<li class='active'><a href="wx_mine.html"><i class='iconfont'>&#xe65d;</i><span>我的</span></a></li>
+			</ul>
+		</footer>
+	</div>
+</body>
+</html>

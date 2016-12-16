@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../css/swiper-3.4.0.min.css">
+	<link rel="stylesheet" href="../css/wx-css.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<script src="../js/plugins/jquery-2.2.3.min.js"></script>
+	<script src="../js/plugins/zepto.js"></script>
+	<script src ='../js/plugins/jquery.liMarquee.js'></script>
+	<script src ='../js/plugins/jquery-barcode.js'></script>
+	<script src='../js/plugins/jquery.qrcode.min.js'></script>
+	<script src='../js/plugins/swiper-3.4.0.jquery.min.js'></script>
+	<script src='../js/plugins/rem.js'></script>
+	<script src = '../js/main.js'></script>
+	<script src='../js/saleCart.js'></script>
+	<script src='../js/shoppingCart.js'></script>
+	<script src='../js/coupon.js'></script>
+</head>
+<body>
+	<div class='detal_content total_content'>	
+		<div class='gArtical'>
+			<!-- 头部 -->
+			<div class="detal_header">
+				<div class="header_content">
+				    <a class='back' href="javascript:;" class=''><返回</a>
+				    <h1 class='gTitle'><a class="headlink" href="javascript:;">购物车（<i>0</i>）</a></h1>
+				    <a class = 'Classification' href="javascript:;">编辑</a>
+				</div>
+			</div>
+			<!-- content -->
+			<div class='car_content'>
+				<div class='car_goods'>
+					<div class='saleCartItem'>
+						<div class='clear item'>
+						    <input type="checkbox" class='each-select left'>
+							<dl class='left clear'>
+								<dt class='left'>
+									<img src="../img/smoke.png" alt="">
+								</dt>
+								<dd class='left'>
+									<p>农夫透明装水</p>
+									<p class='size'><span></span></p>
+									<p class='clear'>
+										<span class='left'>￥<i>8</i></span>
+										<a href="javascript:;" class='right eachQuantity'>x<i>2</i><b class='iconfont'>&#xe623;</b></a>
+									</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<!-- null -->
+				<div class="blog blog-single noData">
+	                <article>
+	                    <div class="wrapped-content text-center">
+	                        <img src="../img/pic-no_data.png" class="m-t-60 center-block" style="width: 120px;" alt="无数据">
+	                        <p class="noCost">您还没有在这家店铺消费过呦～</p>
+	                        <p class="lookfor">去店铺看看？</p>
+	                    </div>
+	                </article>
+	            </div>
+				<!-- 挑选多少件 -->
+
+
+
+
+
+
+				<div class='selectNum hide'>
+					<div class='clear select-top'>
+						<div class='left'>数量：</div>
+						<div class='right'>
+							<a href="javascript:;">-</a>
+							<a href="javascript:;" class='goodsNum'>1</a>
+							<a href="javascript:;">+</a>
+						</div>
+					</div>
+					<div class='numBtn'><a href="javascript:;">确定</a></div>
+				</div>
+				<!-- 模态窗口 -->
+				<div class='carBg hide'></div>
+			</div>
+		<footer>
+			<div class='cart_footer clear'>
+				<div class='left clear chioce_content'>
+					<div class='left selectInput'>
+						<div class='seclectChioce'>
+						    <label for="selectAll" class='selectLabel'>全选</label>
+							<input type="checkbox" id='selectAll'>
+						</div>
+					</div>
+					<div class='left total_content'>
+						<p class='total_price'>合计：￥<strong>0</strong></p>
+					</div>
+				</div>
+				<div class='right settlement'><a href="javaascript:;">结算</a></div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

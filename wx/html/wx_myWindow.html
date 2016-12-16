@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>消费记录</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../css/swiper-3.4.0.min.css">
+	<link rel="stylesheet" href="../css/wx-css.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<script src="../js/plugins/jquery-2.2.3.min.js"></script>
+	<script src="../js/plugins/zepto.js"></script>
+	<script src ='../js/plugins/jquery.liMarquee.js'></script>
+	<script src ='../js/plugins/jquery-barcode.js'></script>
+	<script src='../js/plugins/jquery.qrcode.min.js'></script>
+	<script src='../js/plugins/swiper-3.4.0.jquery.min.js'></script>
+	<script src='../js/plugins/rem.js'></script>
+	<script src = '../js/main.js'></script>
+	<script src = '../js/order.js'></script>
+</head>
+<body>
+	<div class='detal_content total_content carContent'>	
+		<div class='gArtical'>
+			<!-- 头部 -->
+			<div class="detal_header">
+				<div class="header_content">
+				    <a class='back' href="./wx_mine.html" class=''><返回</a>
+				    <h1 class='gTitle'><a class="headlink" href="./wx_mine.html">消费记录</a></h1>
+				</div>
+			</div>
+			<!-- content -->
+			<div class='car_content w_content'>
+				<div class='paymentContent'>
+					<article class="paymentItem">
+		              <div class="wrapped-content consume-history">
+		                <div class="each-records entity">
+		                    <p class="record-time clear">
+		                    	<i class='time'>2016-12-16 16:55:15</i>  
+		                   		<span class="button radius tiny hollow no-margin right">等待付款 </span>
+		                   	</p>
+		                        <dl class="clear col-level">
+		                            <a href="wx_detale.html">
+		                            <dt class="imgAdapt left">
+		                                <img src="../img/smoke.png">
+		                            </dt></a>
+		                            <dd class='left'>
+			                            <div class='clear goodsInfor'>
+			                            	<div class='left'>
+				                                <a href="/OrderDetalis.aspx?bookingId=24985">
+				                                	<h6 class="m-b-0">常温乳酸菌饮品（原味）</h6>
+				                                </a>
+			                                </div>
+			                                <div class="right">
+			                                	<h6 class="m-b-0 text-right mark-text grey-medium">
+			                                		¥ <span class="price fs-16">5</span>
+			                                	</h6>
+			                                	<p class=" m-t-0 m-b-0 text-right">X<span class="unit">1</span></p>
+			                                </div>
+			                            </div>
+		                                <p class="mark-text grey">
+		                                	<span class="size"></span>
+		                                </p>
+		                            </dd>
+		                        </dl>
+		                    <ul class="list-unstyled">
+		                        <li>共计 
+		                        	<span class="unit">1 </span><span class="m-r-10">件商品</span>
+		                        	<span class="grey-dark">运费： </span> 
+		                        	<span class="grey-medium mark-text">¥</span><span class="transPrice m-r-10">0</span>
+		                            <span class="grey-dark">实付： </span> 
+		                            <span class="mark-text">¥</span><span class="totalPrice">5</span>
+		                            
+		                        </li>	                      
+		                    </ul>
+		                </div>
+		              </div>
+		            </article>
+				</div>
+
+				<!-- null -->
+				<div class="blog-single nullGoods">
+	                <article>
+	                    <div class="wrapped-content text-center">
+	                        <img src="../img/pic-no_data.png" class="m-t-60 center-block" style="width: 120px;" alt="无数据">
+	                        <p class="noCost">您还没有在这家店铺消费过呦～</p>
+	                        <p class="lookfor">去店铺看看？</p>
+	                    </div>
+	                     <div class='enterShop'>
+		                	<a href="wx_index.html">进入店铺</a>
+		                </div>
+	                </article>
+	                <article class="format-standard p-t-60" style="display:none;">
+		                <div class="wrapped-content center-block text-center">
+		                    <img src="/images/logo-grey.png" class="center-block logo" alt="">
+		                    <h6 class="center-block d-ib no-margin"><a href="http://www.i200.cn/" class="mark-text grey-dark fs-6" target="_blank">www.i200.cn</a></h6>
+		                    <h6 class="full-width d-ib fs-8 no-margin mark-text grey-dark">由生意专家旺铺系统提供安全接入</h6>
+		                </div>
+		            </article>
+	            </div>
+			</div>
+			<input type="hidden" id="RandomNumber" value="HAHZHSEQPBME"/>
+			 <div id="RePayQrCode" class="wrapped-content no-padding cart-info RePayQrCode hide" >
+		        <div class="bg-white">
+		            <p class="">长按识别二维码付款</p>
+		            <div class="text-center">
+		                <div id='qrcode'></div>
+		            </div>
+		            <p class="boderNone">长按图片 [ 识别二维码 ] 付款</p>
+		        </div>
+		        <a href="#close-modal" rel='modal:close' class='close-modal'>关闭</a>
+		    </div>
+			<div class='bg detailBg'></div>
+		<footer>
+			<ul>
+				<li><a href="wx_index.html"><i class='iconfont'>&#xe60b;</i><span>首页</span></a></li>
+				<li><a href="wx_search.html"><i class='iconfont'>&#xe625;</i><span>搜索</span></a></li>
+				<li><a href="wx_total.html"><i class='iconfont'>&#xe62c;</i><span>全部</span></a></li>
+				<li><a href="wx_car.html"><i class='iconfont'>&#xe601;</i><span>购物车</span></a></li>
+				<li><a href="wx_mine.html"><i class='iconfont'>&#xe65d;</i><span>我的</span></a></li>
+			</ul>
+		</footer>
+	</div>
+</body>
+</html>
