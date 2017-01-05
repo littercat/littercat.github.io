@@ -1,0 +1,195 @@
+<scroll-view class="section" scroll-y="true">
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="content">
+    <block>
+      <view class="name">{{goods.name}}</view>
+      <view class="tsnr">{{goods.id}}</view>
+      <view class="prices">￥{{goods.price}}</view>
+    </block>
+
+    <!--<view class="bt">
+            <text class="count">购买数量：</text>
+            <button type="default" size="mini" bindtap="delCount">-</button>
+            <input  value="{{count}}"/>
+            <button type="default" size="mini" bindtap="addCount">+</button>
+        </view>-->
+  </view>
+  <view class='shop'>
+    <view>
+      <image src="../../image/icon64_appwx_logo.png"></image>
+    </view>
+    <view class='shopname'>连锁2店-服装</view>
+    <view bindtap='enterShop'>进入店铺></view>
+  </view>
+  <view class="goods_img">
+    <view class="nav bc_white">
+      <view class="{{selected?'bg-color':'default'}}" bindtap="selected">商品详情</view>
+      <view class="{{selected1?'bg-color':'default'}}" bindtap="selected1">评价{{1}}</view>
+    </view>
+    <view class="{{selected?'show':'hidden'}}">
+      <image src="https://hamlet.b0.upaiyun.com/1609/20171/77f7a3c93fd641bf95150501ef9a7cad.jpg!/fwfh/640x352/quality/80" />
+      <image src="https://hamlet.b0.upaiyun.com/1609/19171/2788065f96c04ad38c8db50ad723bc37.jpg!/fwfh/640x352/quality/80" />
+      <image class="img3" src="https://hamlet.b0.upaiyun.com/1609/20180/934270f1be264c63bfaf85b37e545928.jpg!/fwfh/640x352/quality/80" />
+      <image src="https://hamlet.b0.upaiyun.com/1609/23171/70065cf9e45d46729ca51dec55d5f650.jpg!/fwfh/640x352/quality/80" />
+      <image class="img5" src="https://hamlet.b0.upaiyun.com/1609/23150/4cc74e62833e4cdaaec79f3a2ef256e5.jpg!/fwfh/640x352/quality/80" />
+    </view>
+    <view class="{{selected1?'show':'hidden'}}" wx:for-item="{{item}}">
+      <view class='comment'>
+        <view class='score'>综合评分</view>
+        <view class='starImg'></view>
+      </view>
+      <view class='comment userinfo'>
+        <view class='star'>
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class='score'>
+          <view>{{item.ueser}}</view>
+          <view class='commentinfo'>{{item.comment}}</view>
+        </view>
+        <view>
+          <view class='star1'></view>
+          <view class='commentinfo'>{{item.time}}</view>
+        </view>
+      </view>
+      <view class='goodscm comment'>
+        <text>商品评价</text>
+        <view></view>
+      </view>
+      <view class='comment write'>
+        <input type="text" placeholder="撰写评论。。。" />
+        <text>发送</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="bottom_bar">
+  <view class='firstbar' bindtap='contect'>
+    <image src='../../image/icon_API_HL.png'></image>
+    <view>联系客服</view>
+  </view>
+  <view class='firstbar'>
+    <image src='../../image/icon_API_HL.png'></image>
+    <view>喜欢</view>
+  </view>
+  <view class='firstbar' bindtap='cart'>
+    <image src="../../image/footer-icon-03.png"></image>
+    <view>购物车</view>
+  </view>
+  <view class="bar buy" bindtap="addcart">加入购物车</view>
+  <view class="bar" bindtap="buy">立即购买</view>
+</view>
+<view class="body-view">
+  <toast hidden="{{toastHidden}}" bindchange="toastChange">
+    加入购物车~
+  </toast>
+</view>
+
+<!--添加商品的件数-->
+<block>
+  <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+  <view class='message_contant detale' style="display:{{getDisplay}}">
+    <view class="message-right">
+      <view class='message'>
+        <view class='goods-img'>
+          <image src="{{goods.img}}"></image>
+        </view>
+        <view class='goods-info'>
+          <view>{{goods.name}}</view>
+          <view class='goods-price'>
+            <view class='price'>￥{{goods.price}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='freight'>运费：
+        <text>￥{{0}}</text>
+     </view>
+        <view class='option'>
+          <view>选择商品属性</view>
+          <view  class='goodsAttr'>
+            <block wx:for='{{attr}}'>
+                <text>{{item}}</text>
+            </block>
+          </view>
+        </view>
+        <view  class='number'>
+          <view>数量：</view>
+          <view>
+            <button>-</button>
+            <input type="number" value='1' />
+            <button>+</button>
+          </view>
+        </view>
+        <view id="UsefullCouponList" class="b-price googs_coupon">
+          <view class='clear'>
+            <view class="left">优惠券</view>
+            <view id="UsefullCoupon" class="right">
+               新店礼品券10元
+            </view>
+          </view>
+          <view class='integral'>
+            <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="10"/>
+            <icon wx:else type="circle" size="10" />
+            积分抵现 可用10积分抵扣0.1元（剩余18积分）
+          </view>
+        </view>
+        <view class="b-price payment">
+			<view class="allMoney left">
+					合计：¥0
+			</view>
+			 <view class="right buyBtn" id="buyByCart" rel="active" hidden='{{hidestyle}}' bindtap='addcart1'>
+				加入购物车
+			</view>
+			<view class="right buyBtn buyNow" id="buyNow" hidden='{{!hidestyle}}'  bindtap='buynow1'>
+				立即购买
+			</view>
+		</view>
+    </view>
+  </view>
+</block>
+<view class='bgcolor hide' hidden='{{displaystyle}}' bindtap='closeBtn'></view>
+  <view class='storeInformation hide' hidden='{{displaystyle}}'>
+    <view class='shopinfo'>
+      <view class='info'>
+        <view>
+          <image src="{{item.img}}" alt=""></image>
+        </view>
+        <view>连锁2店-服装</view>
+      </view>
+    </view>
+    <view class='shopInforation'>
+      <view class='list'>
+        <view class='clear listitem'>
+          <text class='left'>电话</text>
+          <view class='left'>
+            <input type="number" />
+          </view>
+          <text>拨打</text>
+        </view>
+        <view class='clear listitem'>
+          <text class='left'>微信</text>
+          <view class='left'>
+            <input type="text" />
+          </view>
+          <text></text>
+        </view>
+        <view class='clear listitem'>
+          <text class='left'>地址</text>
+          <view class='left'>
+            <input type="text" />
+          </view>
+          <text></text>
+        </view>
+      </view>
+    </view>
+    <view class="closeBtn" bindtap='closeBtn'>
+      关闭
+    </view>
+  </view>

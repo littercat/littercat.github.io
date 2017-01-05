@@ -1,0 +1,297 @@
+.container {
+  background-color: #fff;
+}
+/*轮播*/
+.swiper_box {
+  /*width: 100%;*/
+  height: 150px;
+}
+swiper.swiper {
+  height: 100%;
+}
+.swiper-item {
+    display: block;
+    height: 100%;
+}
+.slide-image {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+/*联系卖家*/
+.connect{
+  display: flex;
+  position:relative;
+  height:40px;
+  background: #fff;
+  line-height: 40px;
+  font-size:12px;
+  border-bottom:1px solid #ccc;
+  color:#666;
+}
+.connect .img image{
+position: absolute;
+width:60px;
+height:60px;
+left:20px;
+bottom:10px;
+}
+.seller{
+  color:#FE6030;
+}
+.shop-name{
+  flex:1;
+  text-align: center;
+  margin-left:10px;
+}
+.connect view:last-child{
+  margin-right:10px;
+  display: flex;
+}
+.connect view:last-child image{
+  width:20px;
+  height:20px;
+  margin-top:8px;
+}
+/*公告*/
+.notice{
+  margin:6px 20px;
+  font-size:12px;
+  color:#FE6030;
+}
+/*优惠券*/
+.coupon{
+  background: #fff;
+  padding:5px 20px;
+  margin-bottom:10px;
+  color:#666;
+}
+.coupon .content{
+  display: flex;
+  border:1px solid #FE6030;
+  font-size:12px;
+}
+/*优惠券左边*/
+.l-c{
+  background: url('../../image/stamp-parttern.png') no-repeat;
+  background-size:cover;
+  color:#fff;
+   padding:0 10px;
+   text-align: center;
+}
+.l-c text{
+  font-size:20px;
+  font-weight:600;
+}
+.l-c view:first-child{
+  padding:10px 0;
+}
+.l-c view:last-child{
+  /*width:100%;*/
+  font-size:14px;
+  color:#FE6030;
+  background:#fff;
+  padding:5px 15px;
+  border-radius:4px;
+  margin-top:5px;
+}
+/*优惠券右边*/
+.r-c{
+  padding:10px;
+}
+.r-c .range{
+  padding:10px 0;
+}
+
+/*本店推荐*/
+.line_y{
+  padding:0 20px;
+  font-weight:400;
+  color:#333;
+  height:16px;
+}
+.goods{
+  margin:0 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.goods .goods-item{
+  width:47%;
+  border:1px solid #ccc;
+  margin-top:20px;
+}
+.goods .goods-item:nth-child(odd){
+  margin-right:4%
+}
+.goods .goods-item .img{
+  margin:0 3%;
+  margin-top:5px;
+  /*min-height:141px;*/
+  overflow: hidden;
+}
+.goods .goods-item image{
+  width:100%;
+  height:0;
+  min-height:141px;
+}
+.title{
+  font-size:14px;
+  color:#666;
+  margin:0 3%;
+  padding:8px 0;
+  border-bottom:1px solid #ccc;
+}
+.price{
+  display: flex;
+  color:#666;
+  font-size:14px;
+  padding:10px 0;
+  margin:0 2%;
+}
+.price view:first-child{
+  flex:1;
+}
+.price view:last-child{
+  font-size:12px;
+  color:#fff;
+  background: #FE6030;
+  padding:2px 3px;
+  border-radius: 3px;
+}
+
+/*联系店铺*/
+.bg {
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.storeInformation {
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    z-index: 102;
+    background: #fff;
+    width: 90%;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 7px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+}
+.storeInformation image{
+  width:60px;
+  height:60px;
+}
+
+.storeInformation .shop {
+    background: url('../../image/StoreBanner.png') no-repeat center;
+    background-size: cover;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.storeInformation .shop .info {
+    min-height: 80px;
+    padding: 15px !important;
+    color:#666;
+}
+
+.storeInformation .shop view text:nth-child(1) {
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #e6e6e6;
+    margin-top: 10px;
+}
+
+.storeInformation .shop view text:nth-child(1) img {
+    width: 100%;
+}
+
+.storeInformation .shop view text:nth-child(2) {
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.storeInformation .shopInforation {
+    padding: 15px !important;
+    text-align: center;
+}
+
+.storeInformation .shopInforation .list {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-top: 10px !important;
+    font-size: 14px;
+    color:#666;
+}
+
+.storeInformation .shopInforation .listitem {
+    padding: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 25px;
+    display: flex;
+}
+
+.storeInformation .shopInforation .listitem view {
+    width: calc(100% - 80px);
+}
+
+.storeInformation .shopInforation .listitem input {
+    border: none;
+    flex:1;
+    width: 100%;
+    text-align: left;
+    padding-left:10px
+}
+
+.storeInformation .shopInforation .listitem text {
+    width: 36px;
+}
+
+.storeInformation .shopInforation .listitem a {
+    color: #FE6030;
+    width: 40px;
+}
+
+.storeInformation .closeBtn {
+    margin-bottom: 10px;
+}
+
+.storeInformation .closeBtn a {
+    box-shadow: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    margin: 5px 5px 5px 0;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    background: #FE6030;
+    color: #fff;
+    font-weight: 400;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    margin-top: 15px!important;
+    padding: 5px 15px;
+}
+
+.storeInformation .shopInforation input {
+    width: 100%;
+}
+
+
+ 

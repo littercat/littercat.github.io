@@ -1,0 +1,14 @@
+<view id='container'>
+   <view class='goods'>
+    <block wx:for='{{navLeftItems}}'>
+      <view class='goods-item' >
+        <view class='img'><image src="{{item.img_url}}"></image></view>
+        <view class='title'>{{item.item_name}}</view>
+        <view class='price'>
+          <view>{{item.price}}</view>
+          <view><navigator url="../detall/detall?id={{item.num_iid}}&name={{item.item_name}}&price={{item.price}}&img={{item.img_url}}">查看详情</navigator></view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

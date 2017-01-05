@@ -1,0 +1,25 @@
+.message{
+    border-bottom:1px solid #ccc;
+}
+.message .consignee{
+    padding:10px 0 10px 20px;
+    border-top:1px solid #ccc;
+}
+.message .consignee view{
+    padding:4px 0;
+    font-size: 14px;
+    color:#666;
+}
+.message .consignee .inputmessage{
+    color:#666;
+    font-size: 12px;
+}
+.save{
+    color:#fff;
+    background: #ff0000;
+    padding:8px;
+    width:80%;
+    margin-left:8%;
+    margin-top:30px;
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+
+/*空的购物车*/
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  background-color: #F2f2f2;
+  color: #939393;
+}
+.container .cart-image {
+  width: 120px;
+  height: 120px;
+}
+/*有商品的购物车*/
+.cart-content{
+  display: flex;
+  background: #fff;
+  width:100%;
+  margin-top:10px;
+  border:1px solid #ccc;
+  padding:10px 10px;
+}
+.shop{
+    padding:10px 0 10px 10px;
+    font-size:14px;
+    margin-top:20px;
+    border-top:1px solid #ccc;
+    border-bottom:1px soldi #ccc;
+    background: #fff;
+}
+
+.cart-content .goodsimg{
+  width:80px;
+  height:80px;
+  border:1px solid #ccc;
+}
+
+.cart-content .goods-center{
+  padding:0 10px;
+}
+.goods-info{
+  flex:1;
+  font-size:14px;
+}
+.cart-content .goods-title{
+  height:30px;
+}
+.cart-content .price{
+  display: flex;
+  margin-top:35px;
+}
+.cart-content .total{
+  flex:1;
+}
+.cart-content .many{
+  float:right;
+  margin-right: 25px;
+}

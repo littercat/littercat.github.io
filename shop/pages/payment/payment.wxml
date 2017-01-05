@@ -1,0 +1,38 @@
+<view id='container'>
+    <view class='address'>
+        <view><image src="{{addressImg}}"></image></view>
+        <view class='address-det' wx:for-items='{{item}}' bindtap='manage'>
+            <view>收件人：<text>{{item.name}}</text>    <text>{{item.phone}}</text></view>
+            <view>地址：{{item.address}}</view>
+        </view>
+        <view class='point'>></view>
+    </view>
+    <view class='each_order'>
+        <view class='order-info' wx:for-items='{{info}}'>
+            <view><image src="{{item.goodsImg}}"></image></view>
+            <view class='order-title'>
+                <view class='goods-title'>{{item.goodsTitle}}</view>
+                <view>{{item.goodsid}}</view>
+            </view>
+            <view class='each-price'>
+                <view class='goods-title'>￥<text>{{item.goodsPrice}}</text></view>
+                <view><text>1</text></view>
+            </view>
+        </view>
+        <view class='freight'>
+            <view class='all'>运费</view>
+            <view class='price'>￥<text>0</text></view>
+        </view>
+        <view class='total-price'>
+            <view class='all'>合计</view>
+            <view class='price'>￥<text>2444</text></view>
+        </view>
+    </view>
+    <view class='l-message'>
+        <input type="text" placeholder="给卖家留言。。。"/>
+    </view>
+    <view class='countmany'>需付：￥{{2444.00}}</view>
+    <view class='submitorder' bindtap='cardPay'>使用储值卡支付</view>
+    <view class='submitorder' bindtap='wxPay'>使用微信支付</view>
+    <view class='submitorder' bindtap='cash'>货到付款</view>
+</view>

@@ -1,0 +1,242 @@
+.each-cost{
+    font-size:16px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    margin-bottom:5px;
+}
+.each-cost .all-list{
+    display: flex;
+    border-top:1px solid #ccc;
+    padding:8px 0;
+     margin-left:10px;
+}
+.each-cost .all-list:first-child{
+    border-top:none;
+}
+.all-list view{
+    font-size:14px;
+    margin-right:20px;
+}
+.each-cost .time{
+    flex:1;
+    padding-top:4px;
+}
+.each-cost .payment{
+    padding:5px 10px;
+    background: #ff0000;
+    color:#fff;
+    margin-right:20px;
+}
+.goods-img image{
+    width:60px;
+    height:60px;
+    padding-right:10px;
+}
+.goods-info{
+    padding:5px 0;
+    width:100%;
+}
+.allinfo{
+    display: flex;
+}
+.allinfo .eachprice{
+    flex:1;
+}
+.all{
+    padding:5px 0;
+}
+.goodsnum{
+    margin-right:20px;
+}
+.count{
+    justify-content: flex-end;
+}
+.totalmany{
+    padding-right:20px;
+}
+.allinfo .hidestyle{
+    margin-right:0;
+}
+.all-list .allinfo{
+    margin-right:0;
+}
+/*商品加入购物车*/
+.bg{
+  position:fixed;
+  right:0;
+  top:0;
+  background:rgba(0,0,0,.75);
+  width:100%;
+  height:100%;
+  z-index:20;
+}
+
+
+.message-right{
+  position:fixed;
+  right:0;
+  bottom:0;
+  width:100%;
+  background:#fff;
+  z-index:20;
+  font-size:16px;
+  min-height:70%;
+}
+.message{
+  display: flex;
+}
+.message .goods-img{
+  margin:10px;
+}
+.message .goods-img image{
+  width:100px;
+  height:100px;
+  border:1px solid #333;
+}
+.message .goods-info{
+  margin-top:10px;
+  flex:1;
+}
+.message .num{
+  margin:20px 0;
+}
+.message .goods-price{
+  display: flex;
+  width:100%
+}
+.message .goods-price .price{
+  flex:1;
+}
+.message .goods-price .stock{
+  margin:0;
+  margin-right:10px;
+}
+.message-right .option{
+  display: flex;
+  padding:10px;
+}
+.message-right .total{
+  flex:1;
+}
+.message-right button{
+  height:24px;
+  width:24px;
+  line-height: 24px;
+  text-align: center;
+  margin-right:10px;
+  padding-left:0;
+  padding-right:0;
+}
+
+.nav{
+  width:100%;
+  height:40px;
+  display:flex;
+  flex-direction:row;
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+  background: #ccc;
+  }
+  .bc_white view{
+    padding:0 8px;
+    background: #ccc;
+  }
+.default{
+  line-height:40px;
+  text-align:center;
+  color:#000;
+  font-weight:bold;
+  font-size:14px;
+  }
+.bg-color{
+  line-height:40px;
+  text-align:center;
+  font-weight:bold;
+  font-size:14px;
+  color:red;
+  }
+.show{
+  display:block;
+  text-align:center;
+  line-height:px;
+  }
+.hidden{
+  display:none;
+  text-align:center;
+  line-height:200px;
+  }
+  .attri{
+    display: flex;
+  }
+  .attri view{
+    width:25%;
+    text-align: center;
+    padding:5px 0;
+    color:#aaa;
+  }
+  .price-info{
+    display: flex;
+  }
+  .price-info view{
+    width:25%;
+    padding:10px 0;
+  }
+  .goods-num{
+    display: flex;
+  }
+  .goods-num text{
+    line-height: 24px;
+  }
+  .goods-num .add{
+    margin-left:10px;
+  }
+  .footer{
+    display: flex;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width:100%;
+    border-top:1px solid #ccc; 
+ }
+ .footer view{
+   background: #000;
+   color:#fff;
+  text-align: center;
+  width:100%;
+  height:40px;
+  line-height: 40px;
+ }
+  /*输入商品的数量*/
+ .inputnum{
+   text-align: center;
+   font-size: 14px;
+   margin:20px auto;
+   border:1px solid #ccc;
+   position:absolute;
+   left:10%;
+   bottom:40px;
+   z-index:100;
+   width:80%;
+   background: #fff;
+ } 
+ .inputnum view:first-child{
+   padding:6px 0; 
+ }
+ .inputnum  input{
+   padding:6px;
+   margin:10px 30px;
+   border:1px solid #ccc;
+ }
+ .clickbutton{
+   display: flex;
+   border-top:1px solid #ccc;
+ }
+ .clickbutton view{
+   width:50%;
+   text-align: center;
+   padding:8px 0;
+ }
+ .clickbutton view:last-child{
+   background: #ff0000;
+   color:#fff;
+ }

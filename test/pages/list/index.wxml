@@ -1,0 +1,118 @@
+
+<!--index.wxml-->
+<view class="container">
+  <block wx:for="{{navLeftItems}}">
+    <view class="l-r l-c item">
+
+      <!--<view class="image" catchtap="go" data-id="{{item.num_iid}}">-->
+      <navigator class="image" url="../detall/detall?id={{item.num_iid}}&name={{item.item_name}}&price={{item.price}}&img={{item.img_url}}">
+        <image src="{{item.img_url}}" />
+
+        <!--</view>-->
+      </navigator>
+      <view class="l_auto item-right">
+
+        <!--<view class="title"><text>-->
+        <navigator class="title" url="../detall/detall?id={{item.num_iid}}&name={{item.item_name}}&price={{item.price}}&img={{item.img_url}}">
+          {{item.item_name}}
+        </navigator>
+
+        <!--</text></view>-->
+        <view class='stock'>
+          <text>{{item.num_iid}}</text>
+        </view>
+        <view class='cart-img'>
+          <text class="c-1">￥{{item.price/100}}</text>
+          <image src="{{cartImg}}" bindtap='clickButton' id='{{item.num_iid}}'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block>
+    <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+    <view class='message_contant detale' style="display:{{getDisplay}}">
+      <view class="message-right">
+        <view class='message'>
+          <view class='goods-img'>
+            <image src="{{goodsImg}}"></image>
+          </view>
+          <view class='goods-info'>
+            <view>西服</view>
+            <view class='num'>123456</view>
+            <view class='goods-price'>
+              <view class='price'>￥399</view>
+              <view class='stock'>库存：
+                <text>439</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='option'>
+          <view class='total'>已选
+            <text>0</text>件，合计：￥
+            <text>0</text>
+          </view>
+          <view>
+            <button>-</button>
+          </view>
+          <view>
+            <button>+</button>
+          </view>
+        </view>
+        <view class="body">
+          <view class="nav bc_white">
+            <view class="{{selected?'bg-color':'default'}}" bindtap="selected">白色</view>
+            <view class="{{selected1?'bg-color':'default'}}" bindtap="selected1">黑色</view>
+            <view class="{{selected2?'bg-color':'default'}}" bindtap="selected2">灰色</view>
+          </view>
+         <view class="{{selected?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                        <view class='price-info' wx:for='{{typeattr}}'> 
+                            <view>{{item.size}}</view>
+                            <view>￥{{item.price}}</view>
+                            <view>{{item.num}}</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class="{{selected1?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                         <view class='price-info' wx:for='{{typeattr}}'> 
+                            <view>{{item.size}}</view>
+                            <view>￥{{item.price}}</view>
+                            <view>{{item.num}}</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class="{{selected2?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                         <view class='price-info' wx:for='{{typeattr}}'> 
+                            <view>{{item.size}}</view>
+                            <view>￥{{item.price}}</view>
+                            <view>{{item.num}}</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+          <view class='footer'>
+            <view>喜欢</view>
+            <view class='addcart'>加入购物车</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

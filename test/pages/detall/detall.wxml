@@ -1,0 +1,169 @@
+<scroll-view class="section" scroll-y="true">
+    <view class="banner">
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="content" >
+       <block>
+            <view class="name">{{goods.name}}</view>
+            <view class="tsnr">{{goods.id}}</view>
+            <view class="prices">￥{{goods.price}}</view>
+        </block>
+        <!--<view class="bt">
+            <text class="count">购买数量：</text>
+            <button type="default" size="mini" bindtap="delCount">-</button>
+            <input  value="{{count}}"/>
+            <button type="default" size="mini" bindtap="addCount">+</button>
+        </view>-->
+    </view>
+    <view class='shop'>
+        <view><image src="../../image/icon64_appwx_logo.png"></image></view>
+        <view class='shopname'>连锁2店-服装</view>
+        <view bindtap='enterShop'>进入店铺></view>
+    </view>
+    <view class="goods_img">
+         <view class="nav bc_white">
+            <view class="{{selected?'bg-color':'default'}}" bindtap="selected">商品详情</view>
+            <view class="{{selected1?'bg-color':'default'}}" bindtap="selected1">评价{{1}}</view>
+        </view>
+        <view class="{{selected?'show':'hidden'}}">
+            <image src="https://hamlet.b0.upaiyun.com/1609/20171/77f7a3c93fd641bf95150501ef9a7cad.jpg!/fwfh/640x352/quality/80"/>
+            <image src="https://hamlet.b0.upaiyun.com/1609/19171/2788065f96c04ad38c8db50ad723bc37.jpg!/fwfh/640x352/quality/80"/>
+            <image class="img3" src="https://hamlet.b0.upaiyun.com/1609/20180/934270f1be264c63bfaf85b37e545928.jpg!/fwfh/640x352/quality/80"/>
+            <image src="https://hamlet.b0.upaiyun.com/1609/23171/70065cf9e45d46729ca51dec55d5f650.jpg!/fwfh/640x352/quality/80"/>
+            <image class="img5" src="https://hamlet.b0.upaiyun.com/1609/23150/4cc74e62833e4cdaaec79f3a2ef256e5.jpg!/fwfh/640x352/quality/80"/>
+        </view>
+        <view class="{{selected1?'show':'hidden'}}" wx:for-item="{{item}}">
+            <view class='comment'>
+                <view class='score'>综合评分</view>
+                <view class='starImg'></view>
+            </view>
+            <view class='comment userinfo'>
+                <view class='star'><image src="{{item.img}}"></image></view>
+                <view class='score'>
+                    <view>{{item.ueser}}</view>
+                    <view class='commentinfo'>{{item.comment}}</view>
+                </view>
+                <view>
+                    <view class='star1'></view>
+                    <view class='commentinfo'>{{item.time}}</view>
+                </view>
+            </view>
+            <view class='goodscm comment'>
+               <text>商品评价</text>   <view></view>
+            </view>
+            <view class='comment write'>
+                <input type="text" placeholder="撰写评论。。。"/>
+                <text>发送</text>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="bottom_bar">
+    <view class='firstbar'><image src='../../image/icon_API_HL.png'></image><view>联系客服</view></view>
+    <view class='firstbar'><image src='../../image/icon_API_HL.png'></image><view>喜欢</view></view>
+    <view class='firstbar' bindtap='cart'><image src="../../image/footer-icon-03.png"></image><view>购物车</view></view>
+    <view class="bar buy" bindtap="addcart">加入购物车</view>
+    <view class="bar" bindtap="buy">立即购买</view>
+</view>
+<view class="body-view">
+  <toast hidden="{{toastHidden}}" bindchange="toastChange">
+    加入购物车~
+  </toast>
+</view>
+<!--添加商品的件数-->
+ <block>
+        <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+        <view class='message_contant detale' style="display:{{getDisplay}}">
+            <view class="message-right">
+                <view class='message'>
+                    <view class='goods-img'>
+                        <image src="{{goods.img}}"></image>
+                    </view>
+                    <view class='goods-info'>
+                        <view>西服</view>
+                        <view class='num'>123456</view>
+                        <view class='goods-price'>
+                            <view class='price'>￥399</view>
+                            <view class='stock'>库存：<text>439</text></view>
+                        </view>
+                    </view>
+                </view>
+                <view class='option'>
+                    <view class='total'>已选<text>0</text>件，合计：￥<text>0</text></view>
+                    <view><button>-</button></view>
+                    <view><button>+</button></view>
+                </view>
+                <view class="body">
+                    <view class="nav bc_white">
+                        <view class="{{selected2?'bg-color':'default'}}" bindtap="selected2">白色</view>
+                        <view class="{{selected3?'bg-color':'default'}}" bindtap="selected3">黑色</view>
+                        <view class="{{selected4?'bg-color':'default'}}" bindtap="selected4">灰色</view>
+                    </view>
+                    <view class="{{selected2?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                        <view class='price-info' wx:for='{{typeattr}}'> 
+                            <view>{{item.size}}</view>
+                            <view>￥{{item.price}}</view>
+                            <view>{{item.num}}</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class="{{selected3?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                         <view class='price-info' wx:for='{{typeattr}}'> 
+                            <view>{{item.size}}</view>
+                            <view>￥{{item.price}}</view>
+                            <view>{{item.num}}</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class="{{selected4?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                         <view class='price-info' wx:for='{{typeattr}}'> 
+                            <view>{{item.size}}</view>
+                            <view>￥{{item.price}}</view>
+                            <view>{{item.num}}</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class='footer'>
+                        <view class='confirm' hidden='{{conceal}}' bindtap='confirm'>加入购物车</view>
+                         <view class='confirm' hidden='{{!conceal}}' bindtap='buygoods'>立即购买</view>
+                    </view>
+                </view>
+            </view>    
+            
+        </view>
+        <view class='inputnum' hidden="{{hidestyle}}">
+            <view>请输入商品数量</view>
+            <view>
+                <input type="text"/>
+            </view>
+            <view class='clickbutton'>
+                <view bindtap='cancel'>取消</view>
+                <view bindtap='combtn'>确定</view>
+            </view>
+        </view>
+   </block>

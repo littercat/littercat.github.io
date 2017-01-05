@@ -1,0 +1,25 @@
+<view id='container'>
+    <view class='message' wx:for='{{item}}'>
+        <view class='info'>
+            <view>收货人</view>
+            <view>{{item.name}}</view>
+        </view>
+        <view  class='info'>
+            <view>联系电话</view>
+            <view>{{item.phone}}</view>
+        </view>
+        <view class='info'>
+            <view>收货地址</view>
+            <view>{{item.address}}</view>
+        </view>
+    </view>
+    <view class='button'>
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='resave'>确定</view>
+    </view>
+    <view class='bg' style='display:{{getDisplay}}'></view>
+    <view class='success' style='display:{{getDisplay}}'>
+        <view>预订成功</view>
+        <view bindtap='confirm'>确定</view>
+    </view>
+</view>

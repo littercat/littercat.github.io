@@ -1,0 +1,49 @@
+<view class='container'>
+  <view id="successCover" class="cover hide" hidden='{{successTips}}' bindtap='close'></view>
+  <view class='content'>
+    <view class="coupon_content">
+      <view id="successTips" class="ok hide" hidden='{{successTips}}'>
+        <view>恭喜您！成功领取<strong id="couponValue">0</strong>  元欢迎券</view>
+        <view>优惠券编码：<span id="couponCode"></span>  </view>
+        <view>进店消费，凭手机号码即可使用</view>
+        <view class="close" bindtap='close'>关闭</view>
+      </view>
+      <view class="loadTips">正在领取中...</view>
+      <view class="top-c">
+        <view class="welcome">恭喜您！收到一张<strong>优惠券</strong>  </view>
+      </view>
+      <view class="coupon_price clear">
+        <view class='left'>¥</view>
+        <view id="couponValueZone" class='left'>5</view>
+        <view class='left'>
+          <view class="bold" id='coupon_p'>YUAN</view>
+          <view class="bold coupon_bold">优惠券</view>
+        </view>
+      </view>
+      <view class="data">
+        <view class="data-c">使用限制：<span>无限制</span>  </view>
+        <view class="data-c">有效期至 2017.02.01截止 请及时领取并使用</view>
+        <view class="data-c">地址:上海市嘉定区沪宜公路</view>
+      </view>
+      <view class="ticket-c">
+        <view id="barcode"></view>
+        <view class="disaccout-code welcome bold hide">优惠编码: <strong></strong>  </view>
+      </view>
+    </view>
+    <view class='phone hide phoneHide' hidden="{{getHidden}}">
+      <view class="codec-c formInput">
+        <view>
+          <input type="number" class="form" placeholder="请输入您的手机号码" value="" />
+        </view>
+      </view>
+      <view class="codec-c formInput">
+        <view>
+          <input type="text" class="form" placeholder="请输入您的姓名" value="" />
+        </view>
+      </view>
+    </view>
+    <view class="codec-c clickObtain" hidden="{{getDispaly}}">
+      <view id="btnGetCoupon" class="get bold" bindtap='get'>{{obtain}}</view>
+    </view>
+  </view>
+</view>

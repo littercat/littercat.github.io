@@ -1,0 +1,26 @@
+<view id='container'>
+    <view class='each_order'>
+        <view class='order-info' wx:for='{{item}}'>
+            <view><image src="{{item.goodsImg}}"></image></view>
+            <view class='order-title'>
+                <view class='goods-title'>{{item.goodsTitle}}</view>
+                <view>{{item.goodsid}}</view>
+            </view>
+            <view class='each-price'>
+                <view class='goods-title'>￥<text>{{item.goodsPrice}}</text></view>
+                <view><text>1</text></view>
+            </view>
+        </view>
+        <view class='total-price'>
+            <view class='all'>小计</view>
+            <view class='price'>￥<text>2444</text></view>
+        </view>
+        <view class='freight'>
+            <view class='all'>运费</view>
+            <view class='price'>￥<text>0</text></view>
+        </view>
+        <view class='count'>￥ <text>2444</text> + ￥<text>0</text></view>
+        <view class='count'>实付：￥<text>2444</text></view>
+    </view>
+    <view class='submitorder' bindtap='submitOrder'>提交订单</view>
+</view>

@@ -1,0 +1,223 @@
+page{
+    height:100%;
+}
+.container{
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    height:100%;
+}
+.coupon_content {
+    height: auto;
+    background: #fff;
+    width: 90%;
+    margin: 10% 5% 0 5%;
+    -webkit-box-shadow: 0px 0px 4px #888;
+    -moz-box-shadow: 0px 0px 4px #888;
+    box-shadow: 0px 0px 4px #888;
+    position: relative;
+    font-size: 14px;
+}
+
+.coupon_content .ok {
+    width: 80%;
+    line-height: 26px;
+    background: #66b107;
+    -webkit-box-shadow: 0px 1px 5px #999;
+    -moz-box-shadow: 0px 1px 5px #999;
+    box-shadow: 0px 1px 5px #999;
+    border: 1px solid #65b740;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    position: absolute;
+    top: 48px;
+    z-index: 9999;
+    padding-bottom: 10px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 900;
+    left: 10%;
+    padding-top: 10px;
+}
+
+.coupon_content .ok strong {
+    font-size: 28px;
+}
+
+.coupon_content .ok .close {
+    color: #fff;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    width: 90px;
+    height: 36px;
+    margin: 0 auto;
+    line-height: 36px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.coupon_content .loadTips {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 50%;
+    position: absolute;
+    z-index: 2;
+    font-size: 1.3em;
+}
+ .cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.coupon_content .top-c {
+    color: #000;
+    padding: 0 10px;
+}
+
+.coupon_content .top-c .welcome {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid #f0f0f0;
+    padding:10px 0;
+}
+
+.coupon_content .top-c .welcome strong {
+    color: #df2739;
+    margin-left: 0.3em;
+    border-bottom: 1px dotted #c52433;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.coupon_content .coupon_price {
+    margin-left: 40px;
+    margin-right: 40px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    display: flex;
+}
+
+.coupon_content .coupon_price view:nth-child(1) {
+    padding-left: 40px;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.coupon_content .coupon_price #couponValueZone {
+    font-size: 60px;
+    line-height: 36px;
+    margin-top: 15px;
+}
+
+.coupon_content .coupon_price #coupon_p {
+    padding-left: 0;
+}
+
+.coupon_content .coupon_price .coupon_bold {
+    font-size: 22px;
+    /*font-weight:bolder;*/
+}
+
+.coupon_content .data {
+    border-bottom: 1px dashed #000;
+    text-align: left;
+    clear: both;
+    zoom: 1;
+    overflow: hidden;
+    padding-bottom: 0.4em;
+}
+
+.coupon_content .data view:nth-child(1) {
+    margin-top: 10px;
+}
+
+.coupon_content .data view {
+    line-height: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.coupon_content .ticket-c {
+    height: 60px;
+    width: 100%;
+    background: #dfdfdf;
+    border-top: 1px dashed #fff;
+    text-align: center;
+}
+
+#barcode {
+    width: 100%;
+    display: inline-block;
+    background: #dfdfdf;
+    margin-top: 5px;
+}
+
+#barcode view {
+    background: #dfdfdf;
+}
+
+.clickObtain {
+    width: 90%;
+    background: none;
+    margin-top: 20px;
+    line-height: 40px;
+    margin-left: 5%;
+}
+
+.clickObtain .get {
+    background-color: #c52433;
+    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#df2739), to(#c52433));*/
+    background-image: -webkit-linear-gradient(top, #df2739, #c52433);
+    background-image: -moz-linear-gradient(top, #df2739, #c52433);
+    background-image: -o-linear-gradient(top, #df2739, #c52433);
+    background-image: -ms-linear-gradient(top, #df2739, #c52433);
+    background-image: linear-gradient(top, #df2739, #c52433);
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.phoneHide {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.phoneHide .formInput {
+    height: auto;
+    width: 100%;
+    background: none;
+}
+.phoneHide .formInput view{
+    margin-top:10px;
+}
+.phoneHide .form {
+    background-color: #fff;
+    text-align: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #333;
+    outline: none;
+    border: 1px solid #999;
+    font-size: 14px;
+    padding-right: 19%;
+    padding-left: 4%;
+    height: 40px;
+    width: 76%;
+    line-height:40px;
+}

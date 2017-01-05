@@ -1,0 +1,37 @@
+<view id='container'>
+  <view class='search'>
+    <input placeholder="输入商品名称、类别名称、条形码" />
+    <text>搜索</text>
+  </view>
+  <view class='attr'>
+    <view  wx:for-items='{{info}}'>{{item}}</view>
+  </view>
+  <view class='item' wx:for-items='{{sort}}'>
+      <view class='title'>{{item.title}}</view>
+      <view class='attr name'>
+          <view  wx:for='{{item.attr}}'>{{item}}</view>
+      </view>
+  </view>
+  <view class='price'>
+    <view class='name'>价格</view>
+    <view class='addprice'>
+      <input type='text' placeholder="最低价格" placeholder-style="font-size:16px"/>
+      <view class='add'>
+        <view>+</view>
+        <view>-</view>
+      </view>
+    </view>
+   <view class='line'>——</view> 
+    <view  class='addprice'>
+      <input type='text' placeholder="最高价格" placeholder-style="font-size:16px"/>
+      <view  class='add'>
+        <view>+</view>
+        <view>-</view>
+      </view>
+    </view>
+  </view>
+  <view class='colorname'>颜色</view>
+  <view class='color attr'>
+    <view class='' wx:for='{{color}}'>{{item}}</view>
+  </view>
+</view>

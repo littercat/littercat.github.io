@@ -1,0 +1,115 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="section section_gap swiper_box">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+      <block wx:for-items="{{images}}">
+        <swiper-item catchtap="gos">
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--联系卖家-->
+  <view class='connect' bindtap='contect'>
+    <view class='img'>
+      <image src="{{shop.img}}"></image>
+    </view>
+    <view class='shop-name'>{{shop.shopName}}></view>
+    <view>
+      <image src="{{shop.img1}}"></image>
+      <view class='seller'>联系卖家</view>
+    </view>
+  </view>
+
+  <!--公告-->
+  <view class='notice'>
+    <swiper-item catchtap="gos">
+
+      <!--<image src="{{item}}" class="slide-image" />-->
+      {{notice}}
+    </swiper-item>
+  </view>
+
+  <!--优惠券-->
+  <view class='coupon'>
+    <view class='content'>
+      <view class='l-c'>
+        <view>￥
+          <text>{{coupon.price}}</text>
+        </view>
+        <view bindtap='obtainC'>点击领取</view>
+      </view>
+      <view class='r-c'>
+        <view>{{coupon.sort}}</view>
+        <view class='range'>{{coupon.range}}</view>
+        <view>到期时间：{{coupon.time}}截止</view>
+      </view>
+    </view>
+  </view>
+
+  <!--本店推荐-->
+  <view class="text">
+    <view class="line_y">本店推荐</view>
+  </view>
+
+  <!--商品-->
+  <view class='goods'>
+    <block wx:for='{{navLeftItems}}'>
+      <view class='goods-item'>
+        <view class='img'>
+          <image src="{{item.img_url}}"></image>
+        </view>
+        <view class='title'>{{item.item_name}}</view>
+        <view class='price'>
+          <view>{{item.price}}</view>
+          <view bindtap='detall'>
+            <navigator url="../detall/detall?id={{item.num_iid}}&name={{item.item_name}}&price={{item.price}}&img={{item.img_url}}">查看详情</navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 店铺信息 -->
+  <view class='bg hide' hidden='{{displaystyle}}' bindtap='closeBtn'></view>
+  <view class='storeInformation hide' hidden='{{displaystyle}}'>
+    <view class='shop'>
+      <view class='info'>
+        <view>
+          <image src="{{shop.img}}" alt=""></image>
+        </view>
+        <view>连锁2店-服装</view>
+      </view>
+    </view>
+    <view class='shopInforation'>
+      <view class='list'>
+        <view class='clear listitem'>
+          <text class='left'>电话</text>
+          <view class='left'>
+            <input type="number" />
+          </view>
+          <text>拨打</text>
+        </view>
+        <view class='clear listitem'>
+          <text class='left'>微信</text>
+          <view class='left'>
+            <input type="text" />
+          </view>
+          <text></text>
+        </view>
+        <view class='clear listitem'>
+          <text class='left'>地址</text>
+          <view class='left'>
+            <input type="text" />
+          </view>
+          <text></text>
+        </view>
+      </view>
+    </view>
+    <view class="closeBtn" bindtap='closeBtn'>
+      关闭
+    </view>
+  </view>
+</view>

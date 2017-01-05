@@ -1,0 +1,66 @@
+.each_order{
+    margin-top:10px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding:10px 0;
+    background:#fff;
+}
+.each_order .order-info{
+    display: flex;
+    border-bottom:1px solid #ccc;
+    margin-left:20px
+}
+.each_order .order-info image{
+    width:60px;
+    height:60px;
+    margin:0 5px;
+}
+.order-info{
+    padding:10px 0;
+}
+.order-title{
+    font-size:16px;
+    flex:1;
+}
+.goods-title{
+    margin-bottom:18px;
+}
+.each-price{
+    margin-right:10px;
+}
+.total-price{
+    color:#ff0000;
+    padding:10px 0;
+    margin-left:10px;
+    border-bottom:1px solid #ccc;
+    display: flex;
+    font-size:14px;
+}
+.freight{
+    padding:10px 0 10px 10px;
+    display: flex;
+    font-size:14px;
+}
+.all{
+    flex: 1;
+    padding-left:10px;
+}
+.price{
+    margin-right:10px;
+}
+.count{
+    text-align:right;
+    border-top:1px solid #ccc;
+    padding:10px 0;
+    font-size:14px;
+    padding-right:10px;
+}
+.submitorder{
+    color:#fff;
+    background: #ff0000;
+    padding:10px 30px;
+    width:70%;
+    margin-left:7.5%;
+    margin-top:30px;
+    text-align: center;
+}

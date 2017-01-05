@@ -1,0 +1,9 @@
+<view id='container'>
+  <view class='search'>
+    <input placeholder="输入商品名称、类别名称、条形码" />
+    <text>搜索</text>
+  </view>
+  <view class='attr'>
+    <view  wx:for-items='{{info}}'>{{item}}</view>
+  </view>
+</view>

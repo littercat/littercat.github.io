@@ -1,0 +1,19 @@
+<view class="container">
+<view hidden>
+  <image src="{{cartImg}}" class="cart-image"/>
+  <view>{{tipWords}}</view>
+</view>
+<view style='width:100%'>
+    <view class='shop'>店铺：连锁2店-服装></view>
+    <view class='cart-content' wx:for='{{item}}'>
+        <view class='goods-center'><image src="{{item.goodsimg}}"  class='goodsimg'></image></view>
+        <view class='goods-info'>
+            <view class='goods-title'>{{item.goodsName}}</view>
+            <view class='price'>
+                <view class='total'>￥<text>{{item.goodsPrice}}</text></view>
+                <view class='many' bindtap='cartBtn'>X <text data-index="{{index}}">1</text></view>
+            </view>
+        </view>
+    </view>
+</view>
+</view>

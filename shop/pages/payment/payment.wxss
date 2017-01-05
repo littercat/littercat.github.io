@@ -1,0 +1,118 @@
+.address{
+    display: flex;
+    border-bottom:1px solid #ccc;
+    margin-bottom:20px;
+}
+.address image{
+    width:20px;
+    height:20px;
+    margin-top:15px;
+    padding:0 8px;
+}
+.address-det{
+    flex: 1;
+    font-size:14px;
+}
+.address-det view{
+    padding:8px 0;
+}
+.point{
+    font-size:25px;
+    font-weight: bold;
+    margin-top:10px;
+    margin-right:20px;
+}
+.each_order{
+    margin-top:10px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding-top:10px;
+    background:#fff;
+}
+.each_order .order-info{
+    display: flex;
+    border-bottom:1px solid #ccc;
+    margin-left:20px
+}
+.each_order .order-info image{
+    width:80px;
+    height:80px;
+    margin:0 5px;
+}
+.order-info{
+    padding:10px 0;
+}
+.order-title{
+    font-size:16px;
+    flex:1;
+}
+.goods-title{
+    margin-bottom:18px;
+}
+.each-price{
+    margin-right:10px;
+}
+.total-price{
+    color:#ff0000;
+    padding:15px 0;
+    margin-left:10px;
+    display: flex;
+    font-size:14px;
+}
+.freight{
+    padding:15px 0 15px 10px;
+    display: flex;
+    font-size:14px;
+    border-bottom:1px solid #ccc;
+}
+.all{
+    flex: 1;
+    padding-left:10px;
+}
+.price{
+    margin-right:10px;
+}
+.count{
+    text-align:right;
+    border-top:1px solid #ccc;
+    padding:10px 0;
+    font-size:14px;
+    padding-right:10px;
+}
+.l-message{
+    margin-top:20px;
+    background: #f1f1f1;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.l-message input{
+    width:80%;
+    padding:5px;
+    font-size:14px;
+    margin:10px 0 10px 10%;
+    border:1px solid #ccc;
+    background: #fff;
+}
+.countmany{
+    border-top:1px solid #eee;
+    margin-top:20px;
+    color:#ff0000;
+    font-size:14px;
+    padding:10px 20px 0 10px;
+    text-align: right;
+}
+.submitorder{
+    color:#fff;
+    background: #ff0000;
+    padding:10px 30px;
+    width:70%;
+    margin-left:7.5%;
+    margin-top:15px;
+    text-align: center;
+}
+.submitorder:last-child{
+    background: #fff;
+    color:#666;
+    border:1px solid #ff0000;
+    margin-bottom:30px;
+}

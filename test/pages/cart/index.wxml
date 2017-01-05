@@ -1,0 +1,139 @@
+<view class="container">
+<view hidden>
+  <image src="{{cartImg}}" class="cart-image"/>
+  <view>{{tipWords}}</view>
+</view>
+<view style='width:100%;margin-bottom:40px'>
+    <view class='cart-content' wx:for='{{cart}}'>
+        <view  class='select'>
+            <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" class="my-check"/>
+<icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" class="my-check"/>
+        </view>
+        <view class='goods-center'><image src="{{item.img_url}}"  class='goodsimg'></image></view>
+        <view class='goods-info'>
+            <view class='goods-title'>{{item.item_name}}</view>
+            <view class='price'>
+                <view class='total'>￥<text>{{item.price}}</text></view>
+                <view class='many'  bindtap='cartBtn'><view>X</view> <input type="number" bindchange="bindManual" class="int" value="{{item.count}}" /></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="carts-footer">
+   <view bindtap="bindSelectAll">
+     <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20"/>
+     <icon wx:else type="circle" size="20" />
+     <text>全选</text>
+   </view>
+   <view class='count'>合计:{{count}}</view>
+   <view class="button" bindtap='settlement'>立即结算</view>
+ </view>
+<!--添加商品的件数-->
+ <block>
+        <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+        <view class='message_contant detale' style="display:{{getDisplay}}">
+            <view class="message-right">
+                <view class='message'>
+                    <view class='goods-img'>
+                        <image src="{{goodsImg}}"></image>
+                    </view>
+                    <view class='goods-info'>
+                        <view>西服</view>
+                        <view class='num'>123456</view>
+                        <view class='goods-price'>
+                            <view class='price'>￥399</view>
+                            <view class='stock'>库存：<text>439</text></view>
+                        </view>
+                    </view>
+                </view>
+                <view class='option'>
+                    <view class='total'>已选{{number}}件，合计：￥{{count}}</view>
+                    <view><button>-</button></view>
+                    <view><button>+</button></view>
+                </view>
+                <view class="body">
+                    <view class="nav bc_white">
+                        <view class="{{selected?'bg-color':'default'}}" bindtap="selected">白色</view>
+                        <view class="{{selected1?'bg-color':'default'}}" bindtap="selected1">黑色</view>
+                        <view class="{{selected2?'bg-color':'default'}}" bindtap="selected2">灰色</view>
+                    </view>
+                    <view class="{{selected?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                        <view class='price-info'>
+                            <view>s</view>
+                            <view>￥<text>399</text></view>
+                            <view>89</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                        <view class='price-info'>
+                            <view>s</view>
+                            <view>￥<text>399</text></view>
+                            <view>89</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class="{{selected1?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                        <view class='price-info'>
+                            <view>s</view>
+                            <view>￥<text>399</text></view>
+                            <view>89</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                        <view class='price-info'>
+                            <view>l</view>
+                            <view>￥<text>399</text></view>
+                            <view>89</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class="{{selected2?'show':'hidden'}}">
+                        <view class='attri'>
+                            <view>尺码</view>
+                            <view>价格</view>
+                            <view>库存</view>
+                            <view>数量</view>
+                        </view>
+                        <view class='price-info'>
+                            <view>s</view>
+                            <view>￥<text>399</text></view>
+                            <view>89</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                        <view class='price-info'>
+                            <view>g</view>
+                            <view>￥<text>399</text></view>
+                            <view>89</view>
+                            <view class='goods-num'><button class='sub'>-</button><text bindtap='quality'>0</text><button class='add'>+</button></view>
+                        </view>
+                    </view>
+                    <view class='footer'>
+                        <view class='confirm' bindtap='confirm'>确定</view>
+                    </view>
+                </view>
+            </view>    
+        </view>
+         <view class='inputnum' hidden="{{hidestyle}}">
+            <view>请输入商品数量</view>
+            <view>
+                <input type="number" bindinput="goodsCount"/>
+            </view>
+            <view class='clickbutton'>
+                <view bindtap='cancel'>取消</view>
+                <view bindtap='combtn'>确定</view>
+            </view>
+        </view>
+   </block>
+
+
+</view>

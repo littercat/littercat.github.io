@@ -1,0 +1,19 @@
+<view id='container'>
+    <view class='shop'>
+        <image src="{{shop.img}}"></image>
+        <view>{{shop.name}}</view>
+    </view>
+    <view> 
+        <view class='telphone'><input placeholder-style="color:#ccc" type="number" placeholder="请输入您的手机号" bindinput="listenerPhoneInput"/></view>
+        <view class='code'>
+            <view class='codenum'><input type="text"/></view>
+            <view class='inputcode' bindtap='{{code}}'><text>{{text}}</text></view>
+        </view>
+        <!--<navigator class="login" url="index/index?name={{shop.name}}&img={{shop.img}}" open-type="index">
+            立即登录
+        </navigator>-->
+        <!--?id={{item.num_iid}}&name={{shop.name}}&img={{shop.img}}-->
+    <view class='login' bindtap='loginbtn'>
+        立即登录
+    </view>
+</view>
