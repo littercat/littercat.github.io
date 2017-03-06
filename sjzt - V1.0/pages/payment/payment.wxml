@@ -1,0 +1,53 @@
+<view id='container'>
+  <view class='address'>
+    <view>
+      <image bindtap='manage' src="{{addressImg}}"></image>
+    </view>
+    <block wx:for='{{item}}'>
+      <!--<block wx:if='{{index==0}}'>-->
+      <view class='address-det' bindtap='manage'>
+        <view>收件人：
+          <text>{{item.shopname}}</text>
+          <text>{{item.mobile}}</text>
+        </view>
+        <view>地址：{{item.address}}</view>
+      </view>
+
+      <!--</block>-->
+    </block>
+    <view class='point' bindtap='manage'>></view>
+  </view>
+  <view class='each_order'>
+    <view class='order-info' wx:for-items='{{orderlist}}'>
+      <view>
+        <image src="{{item.imgurl}}" wx:if = '{{item.imgurl != ""}}'></image>
+        <image src="../../image/w_logo_0.png" wx:else></image>
+      </view>
+      <view class='order-title'>
+        <view class='goods-title'>{{item.codename}}</view>
+        <view>{{item.code}}</view>
+      </view>
+      <view class='each-price'>
+        <view class='goods-title'>￥{{item.sale}}</view>
+        <view style='text-align:center;'>{{item.count}}</view>
+      </view>
+    </view>
+    <view class='freight'>
+      <view class='all'>运费</view>
+      <view class='price'>￥
+        <text>0</text>
+      </view>
+    </view>
+    <view class='total-price'>
+      <view class='all'>合计</view>
+      <view class='price'>￥{{totalprice}}</view>
+    </view>
+  </view>
+  <view class='l-message'>
+    <input type="text" placeholder="给卖家留言。。。" bindinput="bindKeyInput" />
+  </view>
+  <view class='countmany'>需付：￥{{totalprice}}</view>
+  <!--<view class='submitorder' bindtap='cardPay'>使用储值卡支付</view>
+  <view class='submitorder' bindtap='wxPay'>使用微信支付</view>-->
+  <view class='submitorder' bindtap='cash'>货到付款</view>
+</view>

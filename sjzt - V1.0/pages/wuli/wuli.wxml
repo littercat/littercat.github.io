@@ -1,0 +1,24 @@
+<view id='container'>
+    <view class='conpany'>
+        <view><image src="{{gswl.img}}"></image></view>
+        <view class='all center'>{{gswl.name}}</view>
+        <view class='all'>{{gswl.message}}</view>
+    </view>
+    <view class='message'>快递信息</view>
+    <view class='info'>
+        <block wx:for-items='{{info}}'>
+            <view class='each-info'>
+                <view>
+                    <view>{{item.time}}</view>
+                    <view>{{item.time1}}</view>
+                </view>
+                <view class='icon'>
+                    <block>
+                        <icon type="success" size="20"/>
+                    </block>
+                </view>
+                <view class='address'>{{item.message}}</view>
+            </view>
+        </block>
+    </view>
+</view>

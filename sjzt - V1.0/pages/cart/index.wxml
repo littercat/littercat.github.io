@@ -1,0 +1,121 @@
+<view class="container">
+  <view hidden='{{cartnull}}' class='cartnull'>
+    <view class='null_content'>
+      <image src="{{cartImg}}" class="cart-image" />
+      <view>{{tipWords}}</view>
+    </view>
+    <view bindtap='nowbuy' class='nowbuy'>快去挑选商品吧</view>
+  </view>
+  <view style='width:100%;margin-bottom:40px' hidden='{{!cartnull}}'>
+    <block wx:for='{{cart}}'>
+      <block wx:if='{{item.count !=0 }}'>
+        <view class='cart-content'>
+          <view class='select'>
+            <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" class="my-check" />
+            <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" class="my-check" />
+          </view>
+          <view class='goods-center'>
+            <image src="{{item.imgurl}}" class='goodsimg' wx:if='{{item.imgurl !="" }}'></image>
+            <image src="../../image/w_logo_0.png" class='goodsimg' wx:else></image>
+          </view>
+          <view class='goods-info'>
+            <view class='goods-title'>{{item.codename}}</view>
+            <view class='price'>
+              <view class='total'>￥
+                <text>{{item.sale}}</text>
+              </view>
+              <view class='many' bindtap='cartBtn' id='{{index}}' data-gd='{{item.id}}' data-id='{{item.code}}' data-price='{{item.sale}}'>
+                <view>X</view>
+                <view bindchange="bindManual" class="int">{{item.count}}</view>
+                <text class='caret'></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+  <view class="carts-footer" hidden='{{!cartnull}}'>
+    <view>
+      <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" bindtap="bindSelectAll" />
+      <icon wx:else type="circle" size="20" bindtap="bindSelectAll" />
+      <text>全选</text>
+    </view>
+    <view class='count'>合计:{{count}}</view>
+    <view class="button" bindtap='settlement'>立即结算</view>
+  </view>
+
+  <!--添加商品的件数-->
+  <block>
+    <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+    <view class='message_contant detale' style="display:{{getDisplay}}">
+      <block wx:for='{{cart}}'>
+        <block wx:if='{{item.code == goodsid}}'>
+          <view class="message-right">
+            <view class="body">
+              <view class="nav bc_white">
+                <block wx:for='{{item.colors}}'>
+                  <view class="bgcolor select" wx:if='{{item.colorid == colorid}}' bindtap="selected" data-index='{{item.colorid}}'>
+                    {{item.colorname}}
+                    <view class='ge' id='{{index}}'>{{item.stkqty}}</view>
+                  </view>
+                  <view class="default select" bindtap="selected" wx:else data-index='{{item.colorid}}'>{{item.colorname}}
+                    <view class='ge' id='{{index}}'>{{item.stkqty}}</view>
+                  </view>
+                </block>
+              </view>
+              <view>
+                <view class='attri'>
+                  <view>尺码</view>
+                  <view>价格</view>
+                  <view>库存</view>
+                  <view>数量</view>
+                </view>
+                <block wx:for-items='{{cart}}'>
+                  <block wx:if='{{item.code == goodsid}}'>
+                    <block wx:for='{{item.colors}}'>
+                      <block wx:if='{{item.colorid == colorid}}'>
+                        <scroll-view scroll-y="true" style="height: 300px;">
+                          <view class='price-info' wx:for='{{item.sizes}}'>
+                            <view id='{{item.sizeno}}'>{{item.sizename}}</view>
+                            <view>￥{{goodsprice}}</view>
+                            <view>{{item.stkqty}}</view>
+                            <view class='goods-num'>
+                              <button class='{{minusStatuses[index]}}' bindtap="bindMinus" data-index="{{item.sizeno}}">-</button>
+                              <text bindtap='quality' data-index='{{item.sizeno}}}'>{{item.qty}}</text>
+                              <button class='add' bindtap='bindPlus' data-index="{{item.sizeno}}}">+</button>
+                            </view>
+                          </view>
+                        </scroll-view>
+                      </block>
+                    </block>
+                  </block>
+                </block>
+              </view>
+              <view class='footer'>
+                <view class='confirm' bindtap='confirm'>确定</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+
+    <!--<view class='inputnum' hidden="{{hidestyle}}">-->
+    <view hidden>
+      <view>请输入商品数量</view>
+      <view>
+        <input type="number" bindinput="goodsCount" />
+      </view>
+      <view class='clickbutton'>
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='combtn'>确定</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="body-view">
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>

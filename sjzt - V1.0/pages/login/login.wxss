@@ -1,0 +1,78 @@
+.shop{
+    margin-top:30px;
+    font-size:16px;
+     text-align: center;
+     margin-bottom: 30px;
+}
+.shop image{
+    width:60px;
+    height:60px;
+    margin:0 auto;
+    display: inline-block;
+    margin-bottom:10px;
+    border-radius: 10px;
+}
+.telphone view:last-child{
+    width:60%;
+    border:1px solid #ccc;
+    font-size:16px;
+    padding:8px 0 8px 10px;
+    margin:0 auto;
+    border-radius:3px;
+}
+.telphone{
+    display: flex;
+}
+.telphone view:first-child{
+    width:25%;
+    text-align: right;
+    padding:8px 0;
+}
+.code{
+    width:80%;
+    margin:0 auto;
+    display: flex;
+    margin-top:20px;
+}
+.code view:first-child{
+    width:45%;
+}
+.code input{
+    width:100%;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    padding:8px 0 8px 5px;
+    text-align: centr;
+}
+.inputcode{
+    width:40%;
+    margin-left:10%;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    padding:12px 5px;
+    text-align:center;
+    font-size: 16px;
+    color:#666;
+    height:16px;
+}
+.login{
+    width:80%;
+    margin:0 auto;
+    border-radius: 5px;
+    background: #ff0000;
+    color:#fff;
+    padding:10px 0;
+    text-align: center;
+    margin-top:30px;
+}
+.telphone{
+    margin-bottom: 20px;
+}
+.background{
+    background: rgba(0, 0, 0, 0.4);
+    width:100%;
+    height:100%;
+    position: fixed;
+    left:0;
+    top:0;
+}

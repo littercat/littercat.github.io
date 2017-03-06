@@ -1,0 +1,88 @@
+.info{
+    display: flex;
+    padding:15px 0 15px 15px;
+    border-bottom: 1px solid #ccc; 
+    font-size:16px;
+}
+.info view:first-child{
+    width:90px;
+}
+.button{
+    margin-top:30px;
+    text-align: right;
+}
+.button view{
+    border:1px solid #ff0000;
+    color:#ff0000;
+    font-size:14px;
+    margin-right:20px;
+    display: inline-block;
+    padding:5px 15px;
+    border-radius: 3px;
+}
+.button view:last-child{
+    background: #ff0000;
+    color:#fff;
+}
+.success{
+    position: absolute;
+    top:30%;
+    width:70%;
+    left:15%;
+    background: #fff;
+    height:100px;
+    border:1px solid #ccc;
+}
+.bg{
+    position: fixed;
+    left:0;
+    top:0;
+    background: rgba(0, 0, 0, 0.7);
+    height:100%;
+    width:100%;
+}
+.success view:first-child{
+    padding:10px 0 0 10px;
+    margin-bottom:30px;
+}
+.success view:last-child{
+    color:#fff;
+    background: #ff0000;
+    padding:5px 10px;
+    text-align: center;
+    font-size:16px;
+    width:50px;
+    float:right;
+    margin-right:20px;
+    border-radius: 3px;
+}
+.background{
+    background: rgba(0, 0, 0, 0.4);
+    width:100%;
+    height:100%;
+    position: fixed;
+    left:0;
+    top:0;
+}
+.submiting{
+    width:60%;
+    left:20%;
+    top:40%;
+    background: #fff;
+    position:fixed;
+    height:15%;
+    line-height: 15%;
+    margin:0 auto;
+    border-radius: 10px;
+}
+.submiting view{
+     margin:0 auto;
+     text-align:center;
+     line-height: 100%;
+     height:100%;
+     margin-top:15%;
+}
+.submiting image{
+    width:20px;
+    height:20px;
+}

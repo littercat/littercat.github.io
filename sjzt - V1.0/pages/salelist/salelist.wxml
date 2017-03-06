@@ -1,0 +1,37 @@
+<view class='content' hidden='{{hiddenstyle}}'>
+  <view class='sort sortTitle'>
+    <view class='code public'>商品编码</view>
+    <view class='codename public'>商品名称</view>
+    <view class='salemoney public'>销售金额</view>
+    <view class='discount public'>折扣</view>
+    <view class='sale public'>销售</view>
+    <view class='kc public'>库存</view>
+  </view>
+  <block wx:for="{{salelist}}">
+    <view class='sort sortContent'>
+      <view class='code public'>{{item.code}}</view>
+      <view class='codename public detail'>
+        <view class='img' wx:if='{{item.imgurl == ""}}'>
+          <image src="../../image/w_logo_0.png"></image>
+        </view>
+        <view class='img' wx:else>
+          <image src='{{item.imgurl}}'></image>
+        </view>
+        <view class='codeD'>
+          <view class='information'>
+            {{item.codename}}
+            {{item.colorname}}
+          </view>
+          <view>{{item.c_xilmc}}</view>
+        </view>
+      </view>
+      <view class='salemoney public'>￥{{item.amt}}</view>
+      <view class='discount public'>{{item.zk}}</view>
+      <view class='sale public'>{{item.qty}}</view>
+      <view class='kc public'>{{item.kc}}</view>
+    </view>
+  </block>
+</view>
+<view class='salesVolume ' hidden='{{!hiddenstyle}}'>
+  <view>今天没有销售额哦！</view>
+</view>

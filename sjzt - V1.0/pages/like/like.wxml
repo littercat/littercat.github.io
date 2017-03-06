@@ -1,0 +1,119 @@
+<view class="container">
+  <view hidden>
+    <image src="{{cartImg}}" class="cart-image" />
+    <view>{{tipWords}}</view>
+  </view>
+  <view style='width:100%'>
+    <view class='cart-content' wx:for='{{goodsinfo}}'>
+      <view class='select'>
+        <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+        <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+      </view>
+      <view class='goods-center'>
+        <image src="{{item.goodsimg}}" class='goodsimg'></image>
+      </view>
+      <view class='goods-info'>
+        <view class='goods-title'>{{item.goodsName}}</view>
+        <view>
+          <text>{{item.goodsID}}</text>
+        </view>
+        <view class='price'>
+          <view class='total'>￥
+            <text>{{item.goodsPrice}}</text>
+          </view>
+          <view class='many' bindtap='cartBtn'>
+          <image data-id='{{item.num_iid}}' id='{{index}}' src="{{carImg}}" bindtap='clickButton'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="carts-footer">
+    <view bindtap="bindSelectAll">
+      <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
+      <icon wx:else type="circle" size="20" />
+      <text>全选</text>
+    </view>
+    <view class="button" bindtap=''>移除收藏夹</view>
+  </view>
+</view>
+  <!--添加商品的件数-->
+  <block>
+    <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+    <view class='message_contant detale' style="display:{{getDisplay}}">
+      <view class="message-right">
+        <view class='message'>
+          <view class='goods-img'>
+            <image src="{{goods.img}}"></image>
+          </view>
+          <view class='goods-info'>
+            <view>西服</view>
+            <view class='num'>123456</view>
+            <view class='goods-price'>
+              <view class='price'>￥399</view>
+              <view class='stock'>库存：
+                <text>439</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='option'>
+          <view class='total'>已选
+            <text>0</text>件，合计：￥
+            <text>0</text>
+          </view>
+          <view>
+            <button>-</button>
+          </view>
+          <view>
+            <button>+</button>
+          </view>
+        </view>
+       <view class="body">
+          <view class="nav bc_white">
+            <view class="{{bgColor}} select" bindtap="selected" wx:for='{{attr}}' data-index='{{index}}'>{{item.color}}
+              <view class='ge'>2</view>
+            </view>
+          </view>
+          <view>
+            <view class='attri'>
+              <view>尺码</view>
+              <view>价格</view>
+              <view>库存</view>
+              <view>数量</view>
+            </view>
+            <block wx:for='{{attr}}'>
+              <block wx:if='{{item.s1 == index1}}'>
+                <view class='price-info' wx:for='{{item.typeattr}}'>
+                  <view>{{item.size}}</view>
+                  <view>￥{{item.price}}</view>
+                  <view>{{item.num1}}</view>
+                  <view class='goods-num'>
+                    <button class='{{minusStatuses[index]}}' bindtap="bindMinus" data-index="{{index}}">-</button>
+                    <text bindtap='quality' data-index='{{index}}'>{{item.count1}}</text>
+
+                    <!--<input type="number" bindchange="bindManual" value="{{item.num}}" />-->
+                    <button class='add' bindtap='bindPlus' data-index="{{index}}">+</button>
+                  </view>
+                </view>
+              </block>
+            </block>
+          </view>
+          <view class='footer'>
+            <view>喜欢</view>
+            <view class='addcart' bindtap='addcart'>加入购物车</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='inputnum' hidden="{{hideS}}">
+      <view>请输入商品数量</view>
+      <view>
+        <input type="text" />
+      </view>
+      <view class='clickbutton'>
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='combtn'>确定</view>
+      </view>
+    </view>
+  </block>

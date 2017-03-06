@@ -1,0 +1,176 @@
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+
+/*今天 昨天 其他 查询*/
+
+.title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #666;
+  border-bottom:1px solid #ccc;
+}
+
+.title view {
+  flex: 1;
+  width: 25%;
+  text-align: center;
+}
+.title image{
+    width:20px;
+    height:16px;
+}
+.title .action{
+    border-bottom:1px solid #f40;
+    color:#f40;
+} 
+/*销售指标*/
+.sales_target{
+    font-weight:600;
+    font-size:12px;
+    line-height: 30px;
+    text-indent:10px;
+}
+.type-content{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    background: #F2f2f2
+}
+.each_type{
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #ccc;
+    margin:0 3%;
+    width:calc( 44% - 2px );
+    text-align: center;
+    font-size:14px;
+    color:#666;
+    margin-bottom:15px;
+    margin-top:15px;
+}
+.each_type view{
+    margin:10px 0
+}
+.each_type .tmoney{
+    font-size:16px;
+    color:#f40;
+}
+.each_type .compare{
+    font-size:14px;
+    color:lightseagreen;
+}
+
+.each_payment{
+    line-height: 20px;
+    margin:10px 10px;
+    display: flex;
+    font-size:14px;
+    font-weight: 400;
+}
+.each_payment .all{
+    flex:1;
+    height:20px;
+}
+.each_payment .part{
+    background: #f40;
+    height:20px;
+}
+.each_payment .sort{
+    width:20%;
+}
+.each_payment .cost{
+    width:20%;
+    text-align: center;
+    color:#f40;
+    font-size:16px;
+    font-weight:400;
+    margin-right:10px;
+}
+/*选择日期*/
+.searchdata{
+    padding:10px;
+    display: flex;
+}
+.searchdata .data{
+    display: flex;
+    margin-right:20px;
+    flex:1;
+}
+.searchdata .data picker:first-child{
+  flex:1;
+}
+.data-content{
+    position:relative;
+    flex:1;
+    display: flex;
+}
+.calendar_content{
+    position: absolute;
+    left:0px;
+    bottom:-450rpx;
+    z-index:200;
+    background: #fff;
+    border: 2px solid #f40;
+    width:calc( 100% - 24px ); 
+
+}
+.searchdata .options{
+    border:1px solid #ccc;
+    border-right:0;
+    height:50rpx;
+    padding-left:4px;
+    flex:1;
+    font-size:14px;
+    line-height: 50rpx;
+}
+.searchdata  .databutton{
+    height:50rpx;
+    border:1px solid #ccc;
+}
+.searchdata image{
+    width:50rpx;
+    height:50rpx;
+}
+.searchdata .select{
+    width:100rpx;
+    height:50rpx;
+    line-height:50rpx;
+    font-size:16px;
+    color:#333;
+    text-align: center;
+    border-radius: 3px;
+    border:1px solid #ccc;
+}
+.bgcolor{
+  position: fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  z-index:100;
+}

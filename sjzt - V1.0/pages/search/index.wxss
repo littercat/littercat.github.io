@@ -1,0 +1,101 @@
+
+.search{
+  display: flex;
+  padding:10px;
+  background: #fff;
+  font-size:14px;
+}
+.search image{
+  height:18px;
+  width:18px;
+  margin:6px 5px 0 0;
+}
+.search input{
+  flex:1;
+  border:1px solid #ccc;
+  padding:5px 0 5px 10px;
+}
+.search text{
+  border:1px solid #ccc;
+  border-left:none;
+  padding:5px 20px;
+  padding-top:9px;
+  
+}
+.attr{
+  font-size:14px;
+  display: flex;
+  padding:20px;
+  background: #fff;
+  flex-wrap: wrap;
+}
+.attr view{
+  padding:6px 10px;
+  border:1px solid #ccc;
+  margin-right:20px;
+  border-radius:3px;
+}
+.item{
+  padding: 0 20px;
+  background: #fff;
+}
+.item:last-child{
+  border-bottom: 1px solid #ccc;
+}
+.title{
+  font-size:14px;
+  padding:5px 0 ;
+}
+.name{
+  display: flex;
+}
+.color view{
+  margin-bottom:20px;
+}
+.price{
+  display: flex;
+  padding-bottom:5px;
+  background:#fff;
+  padding-left:20px;
+}
+.price .name{
+  width:60px;
+  margin-top:15px;
+  font-size:14px;
+}
+.name view{
+  margin-bottom:5px;
+}
+.price input{
+  border:1px solid #ccc;
+  height:35px;
+  width:80px;
+  margin-top:10px;
+  font-size:16px;
+  text-align: center;
+}
+.addprice{
+  display: flex;
+}
+.add{
+  border:1px solid #ccc;
+  border-left:0;
+  height:35px;
+  margin-top:10px;
+}
+.add view:first-child{
+  border-bottom:1px solid #cccccc;
+}
+.add view{
+    font-size:14px;
+     padding:0 5px;
+}
+.line{
+  margin:20px 5px 0 5px;
+}
+.colorname{
+  padding-left:20px;
+  background: #fff;
+  padding-top:5px;
+    font-size:14px;
+}

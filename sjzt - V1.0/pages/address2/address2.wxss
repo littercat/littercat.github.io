@@ -1,0 +1,16 @@
+.info{
+    display: flex;
+    padding:5px 0 5px 5px; 
+    font-size:14px;
+}
+.info view:first-child{
+    width:90px;
+}
+.message{
+    margin:0 10px 10px 10px;
+    border-bottom:1px solid #ccc;
+    
+}
+.message label{
+    display: flex;
+}

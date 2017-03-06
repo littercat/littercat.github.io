@@ -1,0 +1,55 @@
+.conpany{
+    display: flex;
+    font-size:14px;
+    background: #fff;
+}
+.conpany view:first-child{
+    padding:5px 10px;
+   
+}
+.conpany view:first-child image{
+    width:60px;
+    height:60px;
+    border-radius: 100%;
+    margin-right:10px;
+}
+.conpany view:last-child{
+    flex:1;
+}
+.all{
+    padding-top:20px;
+    font-size:16px;
+}
+.center{
+    margin-right:20px;
+}
+.message{
+    border-top:1px solid #ccc;
+    padding:8px 0 8px 10px;
+    border-bottom:1px solid #ccc;
+}
+.each-info{
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+.each-info view:first-child{
+    width:30%;
+    font-size:16px;
+    text-align: center;
+    margin:8px;
+}
+.icon{
+    border-right:1px solid #ccc;
+    position: relative;
+}
+.icon icon{
+    position: absolute;
+    left:-10px;
+    top:20px;
+}
+.address{
+    font-size:16px;
+    padding-top:15px;
+    padding-left:10px;
+}
+  

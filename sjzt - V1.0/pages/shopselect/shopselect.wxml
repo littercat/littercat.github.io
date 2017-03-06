@@ -1,0 +1,17 @@
+<view>
+  <view class='shop'>
+    <view>店铺</view>
+    <view class='center'></view>
+    <view bindtap='confirm'>确定</view>
+  </view>
+  <view class='shopcontent'>
+    <checkbox-group bindchange="checkboxChange" >
+    <label class="checkbox">
+        <checkbox value="{{companyid}}" bindtap='checked'  />全部
+      </label>
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.shopid}}" data-index = '{{index}}' bindtap='checked' />{{item.shopname}}
+      </label>
+    </checkbox-group>
+  </view>
+</view>

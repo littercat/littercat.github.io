@@ -1,0 +1,18 @@
+<view id='container'>
+  <view class='address'>
+    <view class='success'>
+      <block>
+        <icon type="success" size="20" />
+      </block>
+    </view>
+    <view class='address-det' wx:for-items='{{item}}' bindtap='manage'>
+      <view>收件人：
+        <text>{{item.name}}</text>
+        <text>{{item.phone}}</text>
+      </view>
+      <view>地址：{{item.address}}</view>
+    </view>
+    <view class='point'>编辑</view>
+  </view>
+  <view class='add-address' bindtap='addAddress'>新增地址</view>
+</view>

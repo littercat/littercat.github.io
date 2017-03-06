@@ -1,0 +1,32 @@
+.address{
+    display: flex;
+    border-bottom:1px solid #ccc;
+}
+.success icon{
+    margin:20px 5px 0 5px;
+}
+.address image{
+    width:20px;
+    height:20px;
+    margin-top:15px;
+    padding:0 8px;
+}
+.address-det{
+    flex: 1;
+    font-size:14px;
+}
+.address-det view{
+    padding:8px 0;
+}
+.point{
+    font-size:14px;
+    font-weight: bold;
+    margin-top:10px;
+    margin-right:10px;
+}
+.add-address{
+    font-size: 14px;
+    padding:8px 0 10px 15px;
+    border-bottom:1px solid #ccc;
+    color:#ccc;
+}

@@ -1,0 +1,468 @@
+.container {
+  background-color: #fff;
+}
+page{
+  width:100%;
+  height:100%;
+}
+
+view.section {
+  /*display: block;*//*width: 100%;*/
+}
+
+.network {
+  margin: 0 auto;
+  font-size: 16px;
+  color: #646464;
+}
+
+/*搜索*/
+
+.scanCode {
+  margin: 13px 5px 0 0;
+}
+
+.search {
+  display: flex;
+  padding: 10px;
+  font-size: 14px;
+  background: #fff;
+  flex: 1;
+}
+
+.search-content {
+  display: flex;
+  background: #fff;
+  font-size: 12px;
+}
+
+.search-content .sort {
+  margin-left: 10px;
+}
+
+.search-content .sort image {
+  margin-top: 15px;
+}
+
+.search-content image {
+  /*height: 18px;
+  width: 18px;*/
+  height: 30px;
+  width: 30px;
+}
+
+.search input {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 5px 0;
+  padding-left: 10px;
+}
+
+.search text {
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 3px 20px;
+  padding-top: 7px;
+}
+
+/*分类*/
+
+.index-nav {
+  height: 80px;
+  /*background: red;*/
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+  background-color: #fff;
+  color: #646464;
+}
+
+.index-nav view {
+  flex: 1;
+  flex-direction: column;
+  border-right: 1px solid #f2f2f2;
+}
+
+.index-nav image {
+  width: 38px;
+  height: 38px;
+}
+
+.index-nav text {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+view.text {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 10px 10px 12px;
+  font-size: 15px;
+  color: #656565;
+  background: #f2f2f2;
+}
+
+view.text:before {
+  position: absolute;
+  display: block;
+  content: ' ';
+  left: -5px;
+  width: 2px;
+  height: 100%;
+  background-color: #09bb07;
+}
+
+.line_y {
+  width: 3px;
+  height: 100%;
+  height: 18px;
+  display: inline-block;
+  background-color: #09bb07;
+}
+
+view.text text {
+  margin-left: 10px;
+  line-height: 18px;
+}
+
+.item {
+  /*margin-bottom: 7px;*/
+  height: 126px;
+}
+
+/*本店推荐*/
+
+.item {
+  padding: 8px;
+  background-color: #fff;
+  border-top: 1px solid #e4e4e4;
+  color: #787878;
+}
+
+.item image {
+  display: block;
+  width: 129px;
+  height: 114px;
+}
+
+.goodsimg {
+  position: relative;
+}
+
+.cartnum {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.item-right {
+  margin-left: 20px;
+}
+
+.select {
+  position: relative;
+}
+
+.select .ge {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  padding: 0 5px;
+  height: 20px;
+  border-radius: 20%;
+  background: yellow;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.stock {
+  margin: 15px 0;
+}
+
+.title text {
+  font-size: 16px;
+  color: #787878;
+}
+
+text {
+  font-size: 15px;
+  color: #444;
+}
+
+.c-1 {
+  color: #09bb07;
+}
+
+.cart-img {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.item-right text {
+  flex: 1;
+}
+
+.item-right image {
+  width: 18px;
+  height: 18px;
+}
+
+.selectAllG {
+  margin: 20px 20% 20px 20%;
+  /*border:1px solid #ccc;*/
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  /*background: #fff;*/
+  color: #333;
+
+}
+.nothing{
+  color:#f40
+}
+.refresh {
+  margin: 20px 20% 0 20%;
+  text-align: center;
+}
+
+.refresh image {
+  width: 20px;
+  height: 20px;
+}
+
+/*商品加入购物车*/
+
+.bg {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+.message-right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 80%;
+  background: #fff;
+  z-index: 20;
+  font-size: 14px;
+  height: 100%;
+}
+
+.message {
+  display: flex;
+}
+
+.message .goods-img {
+  margin: 10px;
+}
+
+.message .goods-img image {
+  /*border: 1px solid #333;*/
+  width: 100px;
+  height: 100px;
+}
+
+swiper {
+  width: 130px;
+  height: 120px;
+}
+
+.message .goods-info {
+  margin-top: 10px;
+  flex: 1;
+}
+
+.message .num {
+  margin: 20px 0;
+}
+
+.message .goods-price {
+  display: flex;
+  width: 100%;
+}
+
+.message .goods-price .price {
+  flex: 1;
+}
+
+.message .goods-price .stock {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.message-right .option {
+  display: flex;
+  padding: 10px;
+}
+
+.message-right .total {
+  flex: 1;
+}
+
+.message-right button {
+  height: 24px;
+  width: 28px;
+  line-height: 24px;
+  text-align: center;
+  margin-right: 5px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  background: #ccc;
+}
+
+.bc_white view {
+  padding: 0 8px;
+  background: #ccc;
+}
+
+.default {
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.bgcolor {
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: red;
+}
+
+.show {
+  display: block;
+  text-align: center;
+  line-height: px;
+}
+
+.hidden {
+  display: none;
+  text-align: center;
+  line-height: 200px;
+}
+
+.attri {
+  display: flex;
+}
+
+.attri view {
+  width: 25%;
+  text-align: center;
+  padding: 5px 0;
+  color: #aaa;
+}
+
+.price-info {
+  display: flex;
+}
+
+.price-info view {
+  width: 25%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.goods-num {
+  display: flex;
+}
+
+.goods-num text {
+  line-height: 24px;
+}
+
+.goods-num .add {
+  margin-left: 5px;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 200;
+}
+
+.footer view {
+  /*width: 50%;*/
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer .addcart {
+  background: #f44638;
+  color: #fff;
+}
+
+.showModalStatus {
+  display: block;
+}
+
+/*输入商品的数量*/
+
+.inputnum {
+  text-align: center;
+  font-size: 14px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  position: fixed;
+  left: 20%;
+  bottom: 15%;
+  z-index: 100;
+  width: 80%;
+  background: #fff;
+}
+
+.inputnum view:first-child {
+  padding: 6px 0;
+}
+
+.inputnum  input {
+  padding: 6px;
+  margin: 10px 30px;
+  border: 1px solid #ccc;
+}
+
+.clickbutton {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.clickbutton view {
+  width: 50%;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.clickbutton view:last-child {
+  background: #f00;
+  color: #fff;
+}

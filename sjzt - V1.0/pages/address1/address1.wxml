@@ -1,0 +1,23 @@
+<view id='container'>
+  <view class='message'>
+    <view class='consignee'>
+      <view>收货人</view>
+      <view class='inputmessage'>
+        <input type="text" placeholder="姓名" placeholder-style='color:#ccc' />
+      </view>
+    </view>
+    <view class='consignee'>
+      <view>联系电话</view>
+      <view class='inputmessage'>
+        <input type="number" placeholder="手机或固话" placeholder-style='color:#ccc' />
+      </view>
+    </view>
+    <view class='consignee'>
+      <view>收货地址</view>
+      <view class='inputmessage'>
+        <input type="text" placeholder="街道门牌信息" placeholder-style='color:#ccc' />
+      </view>
+    </view>
+  </view>
+  <view class='save' bindtap='save'>保存</view>
+</view>

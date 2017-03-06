@@ -1,0 +1,104 @@
+<view id='container'>
+  <view class='each_order'>
+    <view class='order-info' wx:for='{{order}}'>
+      <view>
+        <image src="{{item.imgurl}}" wx:if='{{item.imgurl!=""}}'></image>
+        <image src="../../image/w_logo_0.png" wx:else></image>
+      </view>
+      <view class='order-title'>
+        <view class='goods-title'>{{item.codename}}</view>
+        <view>{{item.code}}</view>
+      </view>
+      <view class='each-price'>
+        <view class='goods-title'>￥{{item.sale}}</view>
+        <view bindtap='cartBtn' id='{{index}}' data-id='{{item.code}}' data-gd='{{item.id}}' data-price='{{item.sale}}'>
+          X{{item.count}}
+          <text class='caret'></text>
+        </view>
+      </view>
+    </view>
+    <view class='total-price'>
+      <view class='all'>小计</view>
+      <view class='price'>￥ {{countsum}}
+      </view>
+    </view>
+    <view class='freight'>
+      <view class='all'>运费</view>
+      <view class='price'>￥
+        <text>0</text>
+      </view>
+    </view>
+    <view class='count'>￥{{countsum}} + ￥0</view>
+    <view class='count'>实付：￥{{countsum}}</view>
+  </view>
+  <view class='submitorder' bindtap='submitOrder'>提交订单</view>
+</view>
+
+<!--添加商品的件数-->
+<block>
+  <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+  <view class='message_contant detale' style="display:{{getDisplay}}">
+    <block wx:for='{{order}}'>
+      <block wx:if='{{item.id == careGe}}'>
+        <view class="message-right">
+          <view class="body">
+            <view class="nav bc_white">
+              <block wx:for='{{item.colors}}'>
+                <view class="bgcolor select" wx:if='{{item.colorid == colorid}}' bindtap="selected" data-index='{{item.colorid}}'>
+                  {{item.colorname}}
+                  <view class='ge' id='{{index}}'>{{item.stkqty}}</view>
+                </view>
+                <view class="default select" bindtap="selected" wx:else data-index='{{item.colorid}}'>{{item.colorname}}
+                  <view class='ge' id='{{index}}'>{{item.stkqty}}</view>
+                </view>
+              </block>
+            </view>
+            <view>
+              <view class='attri'>
+                <view>尺码</view>
+                <view>价格</view>
+                <view>库存</view>
+                <view>数量</view>
+              </view>
+              <block wx:for-items='{{order}}'>
+                <block wx:if='{{item.id == careGe}}'>
+                  <block wx:for='{{item.colors}}'>
+                    <block wx:if='{{item.colorid == colorid}}'>
+                      <scroll-view scroll-y="true" style="height: 300px;">
+                        <view class='price-info' wx:for='{{item.sizes}}'>
+                          <view id='{{item.sizeno}}'>{{item.sizename}}</view>
+                          <view>￥{{goodsprice}}</view>
+                          <view>{{item.stkqty}}</view>
+                          <view class='goods-num'>
+                            <button class='{{minusStatuses[index]}}' bindtap="bindMinus" data-index="{{item.sizeno}}">-</button>
+                            <text bindtap='quality' data-index='{{index}}'>{{item.qty}}</text>
+                            <button class='add' bindtap='bindPlus' data-index="{{item.sizeno}}">+</button>
+                          </view>
+                        </view>
+                      </scroll-view>
+                    </block>
+                  </block>
+                </block>
+              </block>
+            </view>
+            <view class='footer'>
+              <view class='confirm' bindtap='confirm'>确定</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+
+  <!--<view class='inputnum' hidden="{{hidestyle}}">-->
+  <view hidden>
+    <view>请输入商品数量</view>
+    <view>
+      <input type="number" bindinput="goodsCount" />
+    </view>
+    <view class='clickbutton'>
+      <view bindtap='cancel'>取消</view>
+      <view bindtap='combtn'>确定</view>
+    </view>
+  </view>
+</block>

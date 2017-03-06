@@ -1,0 +1,23 @@
+<radio-group class="radio-group" bindchange="radioChange">
+  <block wx:for='{{information}}'>
+    <view class='message'>
+      <label class="radio">
+        <radio value="{{item.shopid}}" />
+        <view>
+          <view class='info'>
+            <view>收货人:</view>
+            <view>{{item.shopname}}</view>
+          </view>
+          <view class='info'>
+            <view>联系电话:</view>
+            <view>{{item.mobile}}</view>
+          </view>
+          <view class='info'>
+            <view>收货地址:</view>
+            <view>{{item.address}}</view>
+          </view>
+        </view>
+      </label>
+    </view>
+  </block>
+</radio-group>

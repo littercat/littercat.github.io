@@ -1,0 +1,77 @@
+.sort{
+    display:flex;
+    margin:0 10px;
+    font-weight:600;
+    color:#333;
+}
+.sort .public{
+    padding:5px 0;
+    /*border-right:1px solid #666;*/
+    border-bottom:1px solid #ccc;
+    font-size:12px;
+    text-align: center;
+}
+.sortContent .public{
+    height:40px;
+    line-height: 40px;
+}
+.sort .codename image{
+    width:25px;
+    height:25px;
+}
+.sort .codename .img{
+    margin:3px;
+    line-height: 40px;
+}
+.sort .kc{
+    border-right:none;
+}
+.sortTitle{
+    background: #eee;
+    margin-top:10px;
+}
+.sort .detail{
+    display: flex;
+    /*width:25%;*/
+    line-height: 20px;
+}
+.code{
+    width:19%;
+}
+.codename{
+    width:40%;
+    text-align: center;
+}
+.salemoney{
+    width:15%;
+}
+.discount{
+    width:8%;
+}
+.sale{
+    width:9%;
+}
+.kc{
+    width:9%;
+}
+
+.salesVolume{
+    width:100%;
+    margin:20px auto;
+    font-size: 16px;
+}
+.salesVolume view{
+    margin:0 auto;
+}
+.information{
+    display: flex;
+}
+.information view:first-child{
+    flex:1;
+}
+.sort .public .codeD{
+    text-align: left;
+}
+.codeD{
+    width:calc( 100% - 45px );
+}

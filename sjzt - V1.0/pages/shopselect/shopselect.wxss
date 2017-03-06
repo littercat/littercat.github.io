@@ -1,0 +1,28 @@
+.shop{
+    font-size:14px;
+    font-weight:600;
+    margin:0 10px;
+    padding:10px 0;
+    display: flex;
+
+}
+.shop .center{
+    flex:1
+}
+.shop view:last-child{
+    color:#f40;
+}
+.shopcontent{
+    background: #fff;
+}
+.shopcontent checkbox-group{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.shopcontent label{
+    margin-left:20px;
+    text-align: center;
+    padding:10px 0;
+    font-size:14px;
+}

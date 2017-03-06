@@ -1,0 +1,208 @@
+<view class="body-view">
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>
+
+<!--index.wxml-->
+<view class="container">
+  <view class='h-content'>
+
+    <!--<view class='head'>
+      <view class='active option'>综合</view>
+      <view>价格</view>
+      <view bindtap='more'>更多</view>
+      <view bindtap='option'>筛选</view>
+    </view>-->
+
+    <!--<view class='{{classname}}'>-->
+
+    <!--<view class='last'>
+        <view>从低到高</view>
+        <view>从高到低</view>
+      </view>-->
+
+    <!--<view class='last'>
+        <view class='more' wx:for='{{more}}' id='{{index}}' hidden='{{moreNone}}'>{{item}}</view>-->
+
+    <!--<view>商品编码：从小到大</view>
+        <view>商品编码：从大到小</view>
+        <view>商品名称：从A到Z</view>
+        <view>商品名称：从Z到A</view>
+        <view>最新上架优先</view>-->
+
+    <!--</view>
+      <view class='last other' hidden='{{optionNone}}'>-->
+
+    <!--<view wx:if={{item.label}}>
+        <view>{{item.condition}}</view>
+      </view>-->
+
+    <!--<view wx:for='{{options}}' class='lastview'>
+          <view class='condition'>{{item.condition}}</view>
+          <view class='label' wx:if='{{item.label}}'>{{item.label}}</view>
+        </view>
+        <view class='sure'>
+          <view>重置</view>
+          <view>确定</view>
+        </view>-->
+
+    <!--<view>
+          <view>仅查看促销商品</view>
+          <view>{{标签}}</view>
+        </view>
+        <view>新品上架</view>
+        <view>热卖推荐</view>
+        <view>清仓优惠</view>-->
+
+    <!--</view>
+    </view>-->
+  </view>
+  <view class='item_content'>
+    <block wx:for="{{navLeftItems}}">
+      <view class="l-r l-c item">
+
+        <!--<view class="image" catchtap="go" data-id="{{item.num_iid}}">-->
+
+        <!--<navigator class="image" url="../detall/detall?id={{item.code}}&name={{item.codename}}&price={{item.sale}}&img={{item.imgurl}}">-->
+        <view class="image">
+          <image src="{{item.imgurl}}" class="product_image {{arr[index] ? 'loaded':''}}" mode="aspectFit" wx:if="{{ item.imgurl!=''}}" />
+          <image src="../../image/w_logo_0.png" class="product_image {{arr[index] ? 'loaded':''}}" mode="aspectFit" wx:else />
+          <view class='cartnum' hidden='{{item.hidden}}' style='font-size:14px'>{{item.Allcount}}</view>
+        </view>
+
+        <!--</view>-->
+
+        <!--</navigator>-->
+        <view class="l_auto item-right">
+
+          <!--<view class="title"><text>-->
+
+          <!--<navigator class="title" url="../detall/detall?id={{item.code}}&name={{item.codename}}&price={{item.sale}}&img={{item.imgurl}}">-->
+          {{item.codename}}
+
+          <!--</navigator>-->
+
+          <!--</text></view>-->
+          <view class='stock'>
+            <text>{{item.code}}</text>
+          </view>
+          <view class='cart-img'>
+            <text class="c-1">￥{{item.sale}}</text>
+            <image src="{{cartImg}}" bindtap='clickButton' id='{{item.code}}' data-id='{{item.code}}' id='{{index}}' data-numid='{{item.code}}' data-price='{{item.sale}}'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='selectAllG' bindtap='selectAllG' hidden='{{sGoodHidden}}'>查看所有商品</view>
+  <view class='refresh' hidden='{{allHidden}}'>
+    <image src='../../image/loading.gif'></image>下拉刷新
+  </view>
+  <view hidden='{{n_moreGOods}}' class='refresh'>没有更多的商品</view>
+  <block>
+    <view class='bg' style="display:{{getDisplay}}" bindtap='hideButton'></view>
+    <view class='message_contant detale' style="display:{{getDisplay}}">
+      <block wx:for='{{navRightItems}}'>
+        <view class="message-right">
+          <view class='message'>
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+              <block wx:for="{{imgArr}}">
+                <block wx:if='{{item != ""}}'>
+                  <swiper-item>
+                    <view class='goods-img'>
+                      <image src="{{item}}" wx:if='{{item != ""}}' width='100' height='100'></image>
+                    </view>
+                  </swiper-item>
+                </block>
+                <block wx:else>
+                  <swiper-item transform=''>
+                    <view class='goods-img'>
+                      <image src="../../image/w_logo_0.png"></image>
+                    </view>
+                  </swiper-item>
+                </block>
+              </block>
+            </swiper>
+            <block wx:for-items='{{navLeftItems}}'>
+              <block wx:if='{{item.code == goodsid}}'>
+                <view class='goods-info'>
+                  <view>{{item.codename}}</view>
+                  <view class='num'>{{item.code}}</view>
+                  <view class='goods-price'>
+                    <view class='price'>￥{{item.sale}}</view>
+                    <view class='stock'>库存：{{item.stkqty}}</view>
+                  </view>
+                </view>
+              </block>
+            </block>
+          </view>
+          <view class='option'>
+            <view class='total'>已选 {{count}}件，合计：￥ {{total}}
+            </view>
+            <view>
+              <button id="del{{index}}" bindtap="delCount">-</button>
+            </view>
+            <view>
+              <button id='add{{index}}' bindtap="addCount">+</button>
+            </view>
+          </view>
+          <view class="body">
+            <view class="nav bc_white">
+              <block wx:for='{{attr}}'>
+                <view class="bgcolor select" wx:if='{{item.colorid == colorid}}' bindtap="selected" data-index='{{item.colorid}}'>
+                  {{item.colorname}}
+                  <view class='ge' id='{{index}}'>{{item.stkqty}}</view>
+                </view>
+                <view class="default select" bindtap="selected" wx:else data-index='{{item.colorid}}'>{{item.colorname}}
+                  <view class='ge' id='{{index}}'>{{item.stkqty}}</view>
+                </view>
+              </block>
+            </view>
+            <view>
+              <view class='attri'>
+                <view>尺码</view>
+                <view>价格</view>
+                <view>库存</view>
+                <view>数量</view>
+              </view>
+              <block wx:for='{{attr}}'>
+                <block wx:if='{{item.colorid == colorid}}'>
+                  <scroll-view scroll-y="true" style="height: 300px;">
+                    <view class='price-info' wx:for='{{item.sizes}}'>
+                      <view id='{{item.sizeno}}'>{{item.sizename}}</view>
+                      <view>￥{{goodsprice}}</view>
+                      <view>{{item.stkqty}}</view>
+                      <view class='goods-num'>
+                        <button class='{{minusStatuses[index]}}' bindtap="bindMinus" data-index="{{index}}">-</button>
+                        <text bindtap='quality' data-index='{{index}}'>{{item.qty}}</text>
+                        <button class='add' bindtap='bindPlus' data-index="{{index}}">+</button>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </block>
+              </block>
+            </view>
+            <view class='footer'>
+
+              <!--<view>喜欢</view>-->
+              <view class='addcart' id='{{item.code}}' data-goodscode='{{item.colorid}}' bindtap='addcart'>加入购物车</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!--<view class='inputnum' hidden="{{hidestyle}}">-->
+    <view hidden>
+      <view>请输入商品数量</view>
+      <view>
+        <input type="number" bindinput="goodsCount" />
+      </view>
+      <view class='clickbutton'>
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='combtn'>确定</view>
+      </view>
+    </view>
+  </block>
+</view>
